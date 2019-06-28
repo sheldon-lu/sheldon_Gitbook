@@ -1,7 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
-* [全书组织](Introduction.md)
+* [简介](Introduction.md)
 
 ## Part I - Prometheus基础
 * [第1章 介绍](./quickstart/README.md)
