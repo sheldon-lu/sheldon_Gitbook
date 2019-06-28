@@ -1,0 +1,1439 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>什么是Prometheus Operator · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="use-operator-manage-prometheus.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Introduction.html">
+            
+                <a href="../Introduction.html">
+            
+                    
+                    全书组织
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part I - Prometheus基础</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../quickstart/">
+            
+                <a href="../quickstart/">
+            
+                    
+                    第1章 介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../quickstart/why-monitor.html">
+            
+                <a href="../quickstart/why-monitor.html">
+            
+                    
+                    Prometheus简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../quickstart/prometheus-quick-start.html">
+            
+                <a href="../quickstart/prometheus-quick-start.html">
+            
+                    
+                    初识Prometheus
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.2.1" data-path="../quickstart/install-prometheus-server.html">
+            
+                <a href="../quickstart/install-prometheus-server.html">
+            
+                    
+                    安装Prometheus Server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2.2" data-path="../quickstart/use-node-exporter.html">
+            
+                <a href="../quickstart/use-node-exporter.html">
+            
+                    
+                    使用Node Exporter采集主机数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2.3" data-path="../quickstart/promql_quickstart.html">
+            
+                <a href="../quickstart/promql_quickstart.html">
+            
+                    
+                    使用PromQL查询监控数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2.4" data-path="../quickstart/use-grafana-create-dashboard.html">
+            
+                <a href="../quickstart/use-grafana-create-dashboard.html">
+            
+                    
+                    监控数据可视化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../quickstart/prometheus-job-and-instance.html">
+            
+                <a href="../quickstart/prometheus-job-and-instance.html">
+            
+                    
+                    任务和实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../quickstart/prometheus-arch.html">
+            
+                <a href="../quickstart/prometheus-arch.html">
+            
+                    
+                    Prometheus核心组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../quickstart/SUMMARY.html">
+            
+                <a href="../quickstart/SUMMARY.html">
+            
+                    
+                    小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../promql/">
+            
+                <a href="../promql/">
+            
+                    
+                    第2章 探索PromQL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../promql/what-is-prometheus-metrics-and-labels.html">
+            
+                <a href="../promql/what-is-prometheus-metrics-and-labels.html">
+            
+                    
+                    理解时间序列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../promql/prometheus-metrics-types.html">
+            
+                <a href="../promql/prometheus-metrics-types.html">
+            
+                    
+                    Metrics类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../promql/prometheus-query-language.html">
+            
+                <a href="../promql/prometheus-query-language.html">
+            
+                    
+                    初识PromQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../promql/prometheus-promql-operators-v2.html">
+            
+                <a href="../promql/prometheus-promql-operators-v2.html">
+            
+                    
+                    PromQL操作符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.5" data-path="../promql/prometheus-aggr-ops.html">
+            
+                <a href="../promql/prometheus-aggr-ops.html">
+            
+                    
+                    PromQL聚合操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.6" data-path="../promql/prometheus-promql-functions.html">
+            
+                <a href="../promql/prometheus-promql-functions.html">
+            
+                    
+                    PromQL内置函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.7" data-path="../promql/prometheus-promql-with-http-api.html">
+            
+                <a href="../promql/prometheus-promql-with-http-api.html">
+            
+                    
+                    在HTTP API中使用PromQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.8" data-path="../promql/prometheus-promql-best-praticase.html">
+            
+                <a href="../promql/prometheus-promql-best-praticase.html">
+            
+                    
+                    最佳实践：4个黄金指标和USE方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.9" data-path="../promql/SUMMARY.html">
+            
+                <a href="../promql/SUMMARY.html">
+            
+                    
+                    小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../alert/">
+            
+                <a href="../alert/">
+            
+                    
+                    第3章 Prometheus告警处理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../alert/prometheus-alert-manager-overview.html">
+            
+                <a href="../alert/prometheus-alert-manager-overview.html">
+            
+                    
+                    Prometheus告警简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../alert/prometheus-alert-rule.html">
+            
+                <a href="../alert/prometheus-alert-rule.html">
+            
+                    
+                    自定义Prometheus告警规则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../alert/install-alert-manager.html">
+            
+                <a href="../alert/install-alert-manager.html">
+            
+                    
+                    部署AlertManager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="../alert/alert-manager-config.html">
+            
+                <a href="../alert/alert-manager-config.html">
+            
+                    
+                    Alertmanager配置概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="../alert/alert-manager-route.html">
+            
+                <a href="../alert/alert-manager-route.html">
+            
+                    
+                    基于标签的告警处理路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6" data-path="../alert/alert-manager-use-receiver.html">
+            
+                <a href="../alert/alert-manager-use-receiver.html">
+            
+                    
+                    使用Receiver接收告警信息
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.6.1" data-path="../alert/alert-with-smtp.html">
+            
+                <a href="../alert/alert-with-smtp.html">
+            
+                    
+                    集成邮件系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6.2" data-path="../alert/alert-with-slack.html">
+            
+                <a href="../alert/alert-with-slack.html">
+            
+                    
+                    集成Slack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6.3" data-path="../alert/alert-with-wechat.html">
+            
+                <a href="../alert/alert-with-wechat.html">
+            
+                    
+                    集成企业微信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6.4" data-path="../alert/alert-manager-extension-with-webhook.html">
+            
+                <a href="../alert/alert-manager-extension-with-webhook.html">
+            
+                    
+                    集成钉钉：基于Webhook的扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.7" data-path="../alert/alert-template.html">
+            
+                <a href="../alert/alert-template.html">
+            
+                    
+                    告警模板详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.8" data-path="../alert/alert-manager-inhibit.html">
+            
+                <a href="../alert/alert-manager-inhibit.html">
+            
+                    
+                    屏蔽告警通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.9" data-path="../alert/prometheus-recoding-rules.html">
+            
+                <a href="../alert/prometheus-recoding-rules.html">
+            
+                    
+                    使用Recoding Rules优化性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.10" data-path="../alert/SUMMARY.html">
+            
+                <a href="../alert/SUMMARY.html">
+            
+                    
+                    小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part II - Prometheus进阶</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../exporter/">
+            
+                <a href="../exporter/">
+            
+                    
+                    第4章 Exporter详解
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../exporter/what-is-prometheus-exporter.html">
+            
+                <a href="../exporter/what-is-prometheus-exporter.html">
+            
+                    
+                    Exporter是什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../exporter/commonly-eporter-usage.html">
+            
+                <a href="../exporter/commonly-eporter-usage.html">
+            
+                    
+                    常用Exporter
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.2.1" data-path="../exporter/use-prometheus-monitor-container.html">
+            
+                <a href="../exporter/use-prometheus-monitor-container.html">
+            
+                    
+                    容器监控：cAdvisor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.2" data-path="../exporter/use-promethues-monitor-mysql.html">
+            
+                <a href="../exporter/use-promethues-monitor-mysql.html">
+            
+                    
+                    监控MySQL运行状态：MySQLD Exporter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.3" data-path="../exporter/install_blackbox_exporter.html">
+            
+                <a href="../exporter/install_blackbox_exporter.html">
+            
+                    
+                    网络探测：Blackbox Exporter
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../exporter/custom_exporter_with_java.html">
+            
+                <a href="../exporter/custom_exporter_with_java.html">
+            
+                    
+                    使用Java自定义Exporter
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.3.1" data-path="../exporter/client_library_java.html">
+            
+                <a href="../exporter/client_library_java.html">
+            
+                    
+                    使用Client Java构建Exporter程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3.2" data-path="../exporter/custom_app_support_prometheus.html">
+            
+                <a href="../exporter/custom_app_support_prometheus.html">
+            
+                    
+                    在应用中内置Prometheus支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../exporter/SUMMARY.html">
+            
+                <a href="../exporter/SUMMARY.html">
+            
+                    
+                    小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../grafana/">
+            
+                <a href="../grafana/">
+            
+                    
+                    第5章 数据与可视化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../grafana/use-console-template.html">
+            
+                <a href="../grafana/use-console-template.html">
+            
+                    
+                    使用Console Template
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../grafana/grafana-intro.html">
+            
+                <a href="../grafana/grafana-intro.html">
+            
+                    
+                    Grafana的基本概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../grafana/grafana-panels.html">
+            
+                <a href="../grafana/grafana-panels.html">
+            
+                    
+                    Grafana与数据可视化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.3.1" data-path="../grafana/use_graph_panel.html">
+            
+                <a href="../grafana/use_graph_panel.html">
+            
+                    
+                    变化趋势：Graph面板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3.2" data-path="../grafana/use_heatmap_panel.html">
+            
+                <a href="../grafana/use_heatmap_panel.html">
+            
+                    
+                    分布统计：Heatmap面板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3.3" data-path="../grafana/use_singlestat_panel.html">
+            
+                <a href="../grafana/use_singlestat_panel.html">
+            
+                    
+                    当前状态：SingleStat面板
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4" data-path="../grafana/templating.html">
+            
+                <a href="../grafana/templating.html">
+            
+                    
+                    模板化Dashboard
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.5" data-path="../grafana/SUMMARY.html">
+            
+                <a href="../grafana/SUMMARY.html">
+            
+                    
+                    小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../ha/READMD.html">
+            
+                <a href="../ha/READMD.html">
+            
+                    
+                    第6章 集群与高可用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../ha/prometheus-local-storage.html">
+            
+                <a href="../ha/prometheus-local-storage.html">
+            
+                    
+                    本地存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="../ha/prometheus-remote-storage.html">
+            
+                <a href="../ha/prometheus-remote-storage.html">
+            
+                    
+                    远程存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" data-path="../ha/scale-prometheus-with-federation.html">
+            
+                <a href="../ha/scale-prometheus-with-federation.html">
+            
+                    
+                    联邦集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4" data-path="../ha/prometheus-and-high-availability.html">
+            
+                <a href="../ha/prometheus-and-high-availability.html">
+            
+                    
+                    Prometheus高可用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.5" data-path="../ha/alertmanager-high-availability.html">
+            
+                <a href="../ha/alertmanager-high-availability.html">
+            
+                    
+                    Alertmanager高可用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.6" data-path="../ha/SUMMARY.html">
+            
+                <a href="../ha/SUMMARY.html">
+            
+                    
+                    小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../sd/">
+            
+                <a href="../sd/">
+            
+                    
+                    第7章 Prometheus服务发现
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.1" data-path="../sd/why-need-service-discovery.html">
+            
+                <a href="../sd/why-need-service-discovery.html">
+            
+                    
+                    Prometheus与服务发现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.2" data-path="../sd/service-discovery-with-file.html">
+            
+                <a href="../sd/service-discovery-with-file.html">
+            
+                    
+                    基于文件的服务发现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.3" data-path="../sd/service-discovery-with-consul.html">
+            
+                <a href="../sd/service-discovery-with-consul.html">
+            
+                    
+                    基于Consul的服务发现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.4" data-path="../sd/service-discovery-with-relabel.html">
+            
+                <a href="../sd/service-discovery-with-relabel.html">
+            
+                    
+                    服务发现与Relabel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5" data-path="../sd/SUMMARY.html">
+            
+                <a href="../sd/SUMMARY.html">
+            
+                    
+                    小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part III - Prometheus实战</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../kubernetes/READMD.html">
+            
+                <a href="../kubernetes/READMD.html">
+            
+                    
+                    第8章 监控Kubernetes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../kubernetes/kubernetes-with-minikube.html">
+            
+                <a href="../kubernetes/kubernetes-with-minikube.html">
+            
+                    
+                    初识Kubernetes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../kubernetes/deploy-prometheus-in-kubernetes.html">
+            
+                <a href="../kubernetes/deploy-prometheus-in-kubernetes.html">
+            
+                    
+                    部署Prometheus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../kubernetes/service-discovery-with-kubernetes.html">
+            
+                <a href="../kubernetes/service-discovery-with-kubernetes.html">
+            
+                    
+                    Kubernetes下的服务发现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../kubernetes/use-prometheus-monitor-kubernetes.html">
+            
+                <a href="../kubernetes/use-prometheus-monitor-kubernetes.html">
+            
+                    
+                    监控Kubernetes集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="../kubernetes/hap-with-prometheus.html">
+            
+                <a href="../kubernetes/hap-with-prometheus.html">
+            
+                    
+                    基于Prometheus的弹性伸缩
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.6" data-path="../kubernetes/SUMMARY.html">
+            
+                <a href="../kubernetes/SUMMARY.html">
+            
+                    
+                    小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第9章 Prometheus Operator
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="4.2.1" data-path="what-is-prometheus-operator.html">
+            
+                <a href="what-is-prometheus-operator.html">
+            
+                    
+                    什么是Prometheus Operator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2" data-path="use-operator-manage-prometheus.html">
+            
+                <a href="use-operator-manage-prometheus.html">
+            
+                    
+                    使用Operator管理Prometheus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.3" data-path="use-operator-manage-monitor.html">
+            
+                <a href="use-operator-manage-monitor.html">
+            
+                    
+                    使用Operator管理监控配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4" data-path="use-custom-configuration-in-operator.html">
+            
+                <a href="use-custom-configuration-in-operator.html">
+            
+                    
+                    在Prometheus Operator中使用自定义配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.5" data-path="SUMMARY.html">
+            
+                <a href="SUMMARY.html">
+            
+                    
+                    小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../REFERENCES.html">
+            
+                <a href="../REFERENCES.html">
+            
+                    
+                    参考资料
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >什么是Prometheus Operator</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x4EC0;&#x4E48;&#x662F;prometheus-operator">&#x4EC0;&#x4E48;&#x662F;Prometheus Operator</h1>
+<p>&#x5728;&#x7B2C;8&#x7AE0;&#x7AE0;&#x4E2D;&#xFF0C;&#x4E3A;&#x4E86;&#x5728;Kubernetes&#x80FD;&#x591F;&#x65B9;&#x4FBF;&#x7684;&#x7BA1;&#x7406;&#x548C;&#x90E8;&#x7F72;Prometheus&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;ConfigMap&#x4E86;&#x7BA1;&#x7406;Prometheus&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x3002;&#x6BCF;&#x6B21;&#x5BF9;Prometheus&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x5347;&#x7EA7;&#x65F6;&#xFF0C;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x624B;&#x52A8;&#x79FB;&#x9664;&#x5DF2;&#x7ECF;&#x8FD0;&#x884C;&#x7684;Pod&#x5B9E;&#x4F8B;&#xFF0C;&#x4ECE;&#x800C;&#x8BA9;Kubernetes&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6700;&#x65B0;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x521B;&#x5EFA;Prometheus&#x3002; &#x800C;&#x5982;&#x679C;&#x5F53;&#x5E94;&#x7528;&#x5B9E;&#x4F8B;&#x7684;&#x6570;&#x91CF;&#x66F4;&#x591A;&#x65F6;&#xFF0C;&#x901A;&#x8FC7;&#x624B;&#x52A8;&#x7684;&#x65B9;&#x5F0F;&#x90E8;&#x7F72;&#x548C;&#x5347;&#x7EA7;Prometheus&#x8FC7;&#x7A0B;&#x7E41;&#x7410;&#x5E76;&#x4E14;&#x6548;&#x7387;&#x4F4E;&#x4E0B;&#x3002;</p>
+<p>&#x4ECE;&#x672C;&#x8D28;&#x4E0A;&#x6765;&#x8BB2;Prometheus&#x5C5E;&#x4E8E;&#x662F;&#x5178;&#x578B;&#x7684;&#x6709;&#x72B6;&#x6001;&#x5E94;&#x7528;&#xFF0C;&#x800C;&#x5176;&#x6709;&#x5305;&#x542B;&#x4E86;&#x4E00;&#x4E9B;&#x81EA;&#x8EAB;&#x7279;&#x6709;&#x7684;&#x8FD0;&#x7EF4;&#x7BA1;&#x7406;&#x548C;&#x914D;&#x7F6E;&#x7BA1;&#x7406;&#x65B9;&#x5F0F;&#x3002;&#x800C;&#x8FD9;&#x4E9B;&#x90FD;&#x65E0;&#x6CD5;&#x901A;&#x8FC7;Kubernetes&#x539F;&#x751F;&#x63D0;&#x4F9B;&#x7684;&#x5E94;&#x7528;&#x7BA1;&#x7406;&#x6982;&#x5FF5;&#x5B9E;&#x73B0;&#x81EA;&#x52A8;&#x5316;&#x3002;&#x4E3A;&#x4E86;&#x7B80;&#x5316;&#x8FD9;&#x7C7B;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x7BA1;&#x7406;&#x590D;&#x6742;&#x5EA6;&#xFF0C;CoreOS&#x7387;&#x5148;&#x5F15;&#x5165;&#x4E86;Operator&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x5E76;&#x4E14;&#x9996;&#x5148;&#x63A8;&#x51FA;&#x4E86;&#x9488;&#x5BF9;&#x5728;Kubernetes&#x4E0B;&#x8FD0;&#x884C;&#x548C;&#x7BA1;&#x7406;Etcd&#x7684;Etcd Operator&#x3002;&#x5E76;&#x968F;&#x540E;&#x63A8;&#x51FA;&#x4E86;Prometheus Operator&#x3002;</p>
+<h2 id="prometheus-operator&#x7684;&#x5DE5;&#x4F5C;&#x539F;&#x7406;">Prometheus Operator&#x7684;&#x5DE5;&#x4F5C;&#x539F;&#x7406;</h2>
+<p>&#x4ECE;&#x6982;&#x5FF5;&#x4E0A;&#x6765;&#x8BB2;Operator&#x5C31;&#x662F;&#x9488;&#x5BF9;&#x7BA1;&#x7406;&#x7279;&#x5B9A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#xFF0C;&#x5728;Kubernetes&#x57FA;&#x672C;&#x7684;Resource&#x548C;Controller&#x7684;&#x6982;&#x5FF5;&#x4E0A;&#xFF0C;&#x4EE5;&#x6269;&#x5C55;Kubernetes api&#x7684;&#x5F62;&#x5F0F;&#x3002;&#x5E2E;&#x52A9;&#x7528;&#x6237;&#x521B;&#x5EFA;&#xFF0C;&#x914D;&#x7F6E;&#x548C;&#x7BA1;&#x7406;&#x590D;&#x6742;&#x7684;&#x6709;&#x72B6;&#x6001;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x3002;&#x4ECE;&#x800C;&#x5B9E;&#x73B0;&#x7279;&#x5B9A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x5E38;&#x89C1;&#x64CD;&#x4F5C;&#x4EE5;&#x53CA;&#x8FD0;&#x7EF4;&#x81EA;&#x52A8;&#x5316;&#x3002;</p>
+<p>&#x5728;Kubernetes&#x4E2D;&#x6211;&#x4EEC;&#x4F7F;&#x7528;Deployment&#x3001;DamenSet&#xFF0C;StatefulSet&#x6765;&#x7BA1;&#x7406;&#x5E94;&#x7528;Workload&#xFF0C;&#x4F7F;&#x7528;Service&#xFF0C;Ingress&#x6765;&#x7BA1;&#x7406;&#x5E94;&#x7528;&#x7684;&#x8BBF;&#x95EE;&#x65B9;&#x5F0F;&#xFF0C;&#x4F7F;&#x7528;ConfigMap&#x548C;Secret&#x6765;&#x7BA1;&#x7406;&#x5E94;&#x7528;&#x914D;&#x7F6E;&#x3002;&#x6211;&#x4EEC;&#x5728;&#x96C6;&#x7FA4;&#x4E2D;&#x5BF9;&#x8FD9;&#x4E9B;&#x8D44;&#x6E90;&#x7684;&#x521B;&#x5EFA;&#xFF0C;&#x66F4;&#x65B0;&#xFF0C;&#x5220;&#x9664;&#x7684;&#x52A8;&#x4F5C;&#x90FD;&#x4F1A;&#x88AB;&#x8F6C;&#x6362;&#x4E3A;&#x4E8B;&#x4EF6;(Event)&#xFF0C;Kubernetes&#x7684;Controller Manager&#x8D1F;&#x8D23;&#x76D1;&#x542C;&#x8FD9;&#x4E9B;&#x4E8B;&#x4EF6;&#x5E76;&#x89E6;&#x53D1;&#x76F8;&#x5E94;&#x7684;&#x4EFB;&#x52A1;&#x6765;&#x6EE1;&#x8DB3;&#x7528;&#x6237;&#x7684;&#x671F;&#x671B;&#x3002;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x6211;&#x4EEC;&#x6210;&#x4E3A;&#x58F0;&#x660E;&#x5F0F;&#xFF0C;&#x7528;&#x6237;&#x53EA;&#x9700;&#x8981;&#x5173;&#x5FC3;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x6700;&#x7EC8;&#x72B6;&#x6001;&#xFF0C;&#x5176;&#x5B83;&#x7684;&#x90FD;&#x901A;&#x8FC7;Kubernetes&#x6765;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x5B8C;&#x6210;&#xFF0C;&#x901A;&#x8FC7;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x53EF;&#x4EE5;&#x5927;&#x5927;&#x7B80;&#x5316;&#x5E94;&#x7528;&#x7684;&#x914D;&#x7F6E;&#x7BA1;&#x7406;&#x590D;&#x6742;&#x5EA6;&#x3002;</p>
+<p>&#x800C;&#x9664;&#x4E86;&#x8FD9;&#x4E9B;&#x539F;&#x751F;&#x7684;Resource&#x8D44;&#x6E90;&#x4EE5;&#x5916;&#xFF0C;Kubernetes&#x8FD8;&#x5141;&#x8BB8;&#x7528;&#x6237;&#x6DFB;&#x52A0;&#x81EA;&#x5DF1;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x8D44;&#x6E90;(Custom Resource)&#x3002;&#x5E76;&#x4E14;&#x901A;&#x8FC7;&#x5B9E;&#x73B0;&#x81EA;&#x5B9A;&#x4E49;Controller&#x6765;&#x5B9E;&#x73B0;&#x5BF9;Kubernetes&#x7684;&#x6269;&#x5C55;&#x3002;</p>
+<p>&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF0C;&#x662F;Prometheus Operator&#x7684;&#x67B6;&#x6784;&#x793A;&#x610F;&#x56FE;&#xFF1A;</p>
+<p><img src="static/prometheus-architecture.png" alt="Prometheus Operator&#x67B6;&#x6784;"></p>
+<p>Prometheus&#x7684;&#x672C;&#x804C;&#x5C31;&#x662F;&#x4E00;&#x7EC4;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x7684;CRD&#x8D44;&#x6E90;&#x4EE5;&#x53CA;Controller&#x7684;&#x5B9E;&#x73B0;&#xFF0C;Prometheus Operator&#x8D1F;&#x8D23;&#x76D1;&#x542C;&#x8FD9;&#x4E9B;&#x81EA;&#x5B9A;&#x4E49;&#x8D44;&#x6E90;&#x7684;&#x53D8;&#x5316;&#xFF0C;&#x5E76;&#x4E14;&#x6839;&#x636E;&#x8FD9;&#x4E9B;&#x8D44;&#x6E90;&#x7684;&#x5B9A;&#x4E49;&#x81EA;&#x52A8;&#x5316;&#x7684;&#x5B8C;&#x6210;&#x5982;Prometheus Server&#x81EA;&#x8EAB;&#x4EE5;&#x53CA;&#x914D;&#x7F6E;&#x7684;&#x81EA;&#x52A8;&#x5316;&#x7BA1;&#x7406;&#x5DE5;&#x4F5C;&#x3002;</p>
+<h2 id="prometheus-operator&#x80FD;&#x505A;&#x4EC0;&#x4E48;">Prometheus Operator&#x80FD;&#x505A;&#x4EC0;&#x4E48;</h2>
+<p>&#x8981;&#x4E86;&#x89E3;Prometheus Operator&#x80FD;&#x505A;&#x4EC0;&#x4E48;&#xFF0C;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x8981;&#x4E86;&#x89E3;Prometheus Operator&#x4E3A;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x54EA;&#x4E9B;&#x81EA;&#x5B9A;&#x4E49;&#x7684;Kubernetes&#x8D44;&#x6E90;&#xFF0C;&#x5217;&#x51FA;&#x4E86;Prometheus Operator&#x76EE;&#x524D;&#x63D0;&#x4F9B;&#x7684;&#xFE0F;4&#x7C7B;&#x8D44;&#x6E90;&#xFF1A;</p>
+<ul>
+<li>Prometheus&#xFF1A;&#x58F0;&#x660E;&#x5F0F;&#x521B;&#x5EFA;&#x548C;&#x7BA1;&#x7406;Prometheus Server&#x5B9E;&#x4F8B;&#xFF1B;</li>
+<li>ServiceMonitor&#xFF1A;&#x8D1F;&#x8D23;&#x58F0;&#x660E;&#x5F0F;&#x7684;&#x7BA1;&#x7406;&#x76D1;&#x63A7;&#x914D;&#x7F6E;&#xFF1B;</li>
+<li>PrometheusRule&#xFF1A;&#x8D1F;&#x8D23;&#x58F0;&#x660E;&#x5F0F;&#x7684;&#x7BA1;&#x7406;&#x544A;&#x8B66;&#x914D;&#x7F6E;&#xFF1B;</li>
+<li>Alertmanager&#xFF1A;&#x58F0;&#x660E;&#x5F0F;&#x7684;&#x521B;&#x5EFA;&#x548C;&#x7BA1;&#x7406;Alertmanager&#x5B9E;&#x4F8B;&#x3002;</li>
+</ul>
+<p>&#x7B80;&#x8A00;&#x4E4B;&#xFF0C;Prometheus Operator&#x80FD;&#x591F;&#x5E2E;&#x52A9;&#x7528;&#x6237;&#x81EA;&#x52A8;&#x5316;&#x7684;&#x521B;&#x5EFA;&#x4EE5;&#x53CA;&#x7BA1;&#x7406;Prometheus Server&#x4EE5;&#x53CA;&#x5176;&#x76F8;&#x5E94;&#x7684;&#x914D;&#x7F6E;&#x3002;</p>
+<h2 id="&#x5728;kubernetes&#x96C6;&#x7FA4;&#x4E2D;&#x90E8;&#x7F72;prometheus-operator">&#x5728;Kubernetes&#x96C6;&#x7FA4;&#x4E2D;&#x90E8;&#x7F72;Prometheus Operator</h2>
+<p>&#x5728;Kubernetes&#x4E2D;&#x5B89;&#x88C5;Prometheus Operator&#x975E;&#x5E38;&#x7B80;&#x5355;&#xFF0C;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x4ECE;&#x4EE5;&#x4E0B;&#x5730;&#x5740;&#x4E2D;&#x8FC7;&#x53BB;Prometheus Operator&#x7684;&#x6E90;&#x7801;&#xFF1A;</p>
+<pre><code>git clone https://github.com/coreos/prometheus-operator.git
+</code></pre><p>&#x8FD9;&#x91CC;&#xFF0C;&#x6211;&#x4EEC;&#x4E3A;Promethues Operator&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x547D;&#x540D;&#x7A7A;&#x95F4;monitoring&#xFF1A;</p>
+<pre><code>kubectl create namespace monitoring
+</code></pre><p>&#x7531;&#x4E8E;&#x9700;&#x8981;&#x5BF9;Prometheus Operator&#x8FDB;&#x884C;RBAC&#x6388;&#x6743;&#xFF0C;&#x800C;&#x9ED8;&#x8BA4;&#x7684;bundle.yaml&#x4E2D;&#x4F7F;&#x7528;&#x4E86;default&#x547D;&#x540D;&#x7A7A;&#x95F4;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x5728;&#x5B89;&#x88C5;Prometheus Operator&#x4E4B;&#x524D;&#x9700;&#x8981;&#x5148;&#x66FF;&#x6362;&#x4E00;&#x4E0B;bundle.yaml&#x6587;&#x4EF6;&#x4E2D;ClusterRoleBinding&#x4EE5;&#x53CA;ServiceAccount&#x7684;namespace&#x5B9A;&#x4E49;&#x3002; &#x901A;&#x8FC7;&#x8FD0;&#x884C;&#x4E00;&#x4E0B;&#x547D;&#x4EE4;&#x5B89;&#x88C5;Prometheus Operator&#x7684;Deployment&#x5B9E;&#x4F8B;&#xFF1A;</p>
+<pre><code>$ kubectl -n monitoring apply -f bundle.yaml
+clusterrolebinding.rbac.authorization.k8s.io/prometheus-operator created
+clusterrole.rbac.authorization.k8s.io/prometheus-operator created
+deployment.apps/prometheus-operator created
+serviceaccount/prometheus-operator created
+</code></pre><p>Prometheus Operator&#x901A;&#x8FC7;Deployment&#x7684;&#x5F62;&#x5F0F;&#x8FDB;&#x884C;&#x90E8;&#x7F72;&#xFF0C;&#x4E3A;&#x4E86;&#x80FD;&#x591F;&#x8BA9;Prometheus Operator&#x80FD;&#x591F;&#x76D1;&#x542C;&#x548C;&#x7BA1;&#x7406;Kubernetes&#x8D44;&#x6E90;&#x540C;&#x65F6;&#x4E5F;&#x521B;&#x5EFA;&#x4E86;&#x5355;&#x72EC;&#x7684;ServiceAccount&#x4EE5;&#x53CA;&#x76F8;&#x5173;&#x7684;&#x6388;&#x6743;&#x52A8;&#x4F5C;&#x3002;</p>
+<p>&#x67E5;&#x770B;Prometheus Operator&#x90E8;&#x7F72;&#x72B6;&#x6001;&#xFF0C;&#x4EE5;&#x786E;&#x4FDD;&#x5DF2;&#x6B63;&#x5E38;&#x8FD0;&#x884C;&#xFF1A;</p>
+<pre><code>$ kubectl -n monitoring get pods
+NAME                                   READY     STATUS    RESTARTS   AGE
+prometheus-operator-6db8dbb7dd-2hz55   1/1       Running   0          19s
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 第9章 Prometheus Operator">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="use-operator-manage-prometheus.html" class="navigation navigation-next " aria-label="Next page: 使用Operator管理Prometheus">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"什么是Prometheus Operator","level":"4.2.1","depth":2,"next":{"title":"使用Operator管理Prometheus","level":"4.2.2","depth":2,"path":"operator/use-operator-manage-prometheus.md","ref":"./operator/use-operator-manage-prometheus.md","articles":[]},"previous":{"title":"第9章 Prometheus Operator","level":"4.2","depth":1,"path":"operator/README.md","ref":"./operator/README.md","articles":[{"title":"什么是Prometheus Operator","level":"4.2.1","depth":2,"path":"operator/what-is-prometheus-operator.md","ref":"./operator/what-is-prometheus-operator.md","articles":[]},{"title":"使用Operator管理Prometheus","level":"4.2.2","depth":2,"path":"operator/use-operator-manage-prometheus.md","ref":"./operator/use-operator-manage-prometheus.md","articles":[]},{"title":"使用Operator管理监控配置","level":"4.2.3","depth":2,"path":"operator/use-operator-manage-monitor.md","ref":"./operator/use-operator-manage-monitor.md","articles":[]},{"title":"在Prometheus Operator中使用自定义配置","level":"4.2.4","depth":2,"path":"operator/use-custom-configuration-in-operator.md","ref":"./operator/use-custom-configuration-in-operator.md","articles":[]},{"title":"小结","level":"4.2.5","depth":2,"path":"operator/SUMMARY.md","ref":"./operator/SUMMARY.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"operator/what-is-prometheus-operator.md","mtime":"2019-06-28T14:07:20.487Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-28T14:56:14.926Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

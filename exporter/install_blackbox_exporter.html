@@ -1,0 +1,1600 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>网络探测：Blackbox Exporter · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="custom_exporter_with_java.html" />
+    
+    
+    <link rel="prev" href="use-promethues-monitor-mysql.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Introduction.html">
+            
+                <a href="../Introduction.html">
+            
+                    
+                    全书组织
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part I - Prometheus基础</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../quickstart/">
+            
+                <a href="../quickstart/">
+            
+                    
+                    第1章 介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../quickstart/why-monitor.html">
+            
+                <a href="../quickstart/why-monitor.html">
+            
+                    
+                    Prometheus简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../quickstart/prometheus-quick-start.html">
+            
+                <a href="../quickstart/prometheus-quick-start.html">
+            
+                    
+                    初识Prometheus
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.2.1" data-path="../quickstart/install-prometheus-server.html">
+            
+                <a href="../quickstart/install-prometheus-server.html">
+            
+                    
+                    安装Prometheus Server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2.2" data-path="../quickstart/use-node-exporter.html">
+            
+                <a href="../quickstart/use-node-exporter.html">
+            
+                    
+                    使用Node Exporter采集主机数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2.3" data-path="../quickstart/promql_quickstart.html">
+            
+                <a href="../quickstart/promql_quickstart.html">
+            
+                    
+                    使用PromQL查询监控数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2.4" data-path="../quickstart/use-grafana-create-dashboard.html">
+            
+                <a href="../quickstart/use-grafana-create-dashboard.html">
+            
+                    
+                    监控数据可视化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../quickstart/prometheus-job-and-instance.html">
+            
+                <a href="../quickstart/prometheus-job-and-instance.html">
+            
+                    
+                    任务和实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../quickstart/prometheus-arch.html">
+            
+                <a href="../quickstart/prometheus-arch.html">
+            
+                    
+                    Prometheus核心组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../quickstart/SUMMARY.html">
+            
+                <a href="../quickstart/SUMMARY.html">
+            
+                    
+                    小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../promql/">
+            
+                <a href="../promql/">
+            
+                    
+                    第2章 探索PromQL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../promql/what-is-prometheus-metrics-and-labels.html">
+            
+                <a href="../promql/what-is-prometheus-metrics-and-labels.html">
+            
+                    
+                    理解时间序列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../promql/prometheus-metrics-types.html">
+            
+                <a href="../promql/prometheus-metrics-types.html">
+            
+                    
+                    Metrics类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../promql/prometheus-query-language.html">
+            
+                <a href="../promql/prometheus-query-language.html">
+            
+                    
+                    初识PromQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../promql/prometheus-promql-operators-v2.html">
+            
+                <a href="../promql/prometheus-promql-operators-v2.html">
+            
+                    
+                    PromQL操作符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.5" data-path="../promql/prometheus-aggr-ops.html">
+            
+                <a href="../promql/prometheus-aggr-ops.html">
+            
+                    
+                    PromQL聚合操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.6" data-path="../promql/prometheus-promql-functions.html">
+            
+                <a href="../promql/prometheus-promql-functions.html">
+            
+                    
+                    PromQL内置函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.7" data-path="../promql/prometheus-promql-with-http-api.html">
+            
+                <a href="../promql/prometheus-promql-with-http-api.html">
+            
+                    
+                    在HTTP API中使用PromQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.8" data-path="../promql/prometheus-promql-best-praticase.html">
+            
+                <a href="../promql/prometheus-promql-best-praticase.html">
+            
+                    
+                    最佳实践：4个黄金指标和USE方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.9" data-path="../promql/SUMMARY.html">
+            
+                <a href="../promql/SUMMARY.html">
+            
+                    
+                    小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../alert/">
+            
+                <a href="../alert/">
+            
+                    
+                    第3章 Prometheus告警处理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../alert/prometheus-alert-manager-overview.html">
+            
+                <a href="../alert/prometheus-alert-manager-overview.html">
+            
+                    
+                    Prometheus告警简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../alert/prometheus-alert-rule.html">
+            
+                <a href="../alert/prometheus-alert-rule.html">
+            
+                    
+                    自定义Prometheus告警规则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../alert/install-alert-manager.html">
+            
+                <a href="../alert/install-alert-manager.html">
+            
+                    
+                    部署AlertManager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="../alert/alert-manager-config.html">
+            
+                <a href="../alert/alert-manager-config.html">
+            
+                    
+                    Alertmanager配置概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="../alert/alert-manager-route.html">
+            
+                <a href="../alert/alert-manager-route.html">
+            
+                    
+                    基于标签的告警处理路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6" data-path="../alert/alert-manager-use-receiver.html">
+            
+                <a href="../alert/alert-manager-use-receiver.html">
+            
+                    
+                    使用Receiver接收告警信息
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.6.1" data-path="../alert/alert-with-smtp.html">
+            
+                <a href="../alert/alert-with-smtp.html">
+            
+                    
+                    集成邮件系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6.2" data-path="../alert/alert-with-slack.html">
+            
+                <a href="../alert/alert-with-slack.html">
+            
+                    
+                    集成Slack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6.3" data-path="../alert/alert-with-wechat.html">
+            
+                <a href="../alert/alert-with-wechat.html">
+            
+                    
+                    集成企业微信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6.4" data-path="../alert/alert-manager-extension-with-webhook.html">
+            
+                <a href="../alert/alert-manager-extension-with-webhook.html">
+            
+                    
+                    集成钉钉：基于Webhook的扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.7" data-path="../alert/alert-template.html">
+            
+                <a href="../alert/alert-template.html">
+            
+                    
+                    告警模板详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.8" data-path="../alert/alert-manager-inhibit.html">
+            
+                <a href="../alert/alert-manager-inhibit.html">
+            
+                    
+                    屏蔽告警通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.9" data-path="../alert/prometheus-recoding-rules.html">
+            
+                <a href="../alert/prometheus-recoding-rules.html">
+            
+                    
+                    使用Recoding Rules优化性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.10" data-path="../alert/SUMMARY.html">
+            
+                <a href="../alert/SUMMARY.html">
+            
+                    
+                    小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part II - Prometheus进阶</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第4章 Exporter详解
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="what-is-prometheus-exporter.html">
+            
+                <a href="what-is-prometheus-exporter.html">
+            
+                    
+                    Exporter是什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="commonly-eporter-usage.html">
+            
+                <a href="commonly-eporter-usage.html">
+            
+                    
+                    常用Exporter
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.2.1" data-path="use-prometheus-monitor-container.html">
+            
+                <a href="use-prometheus-monitor-container.html">
+            
+                    
+                    容器监控：cAdvisor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.2" data-path="use-promethues-monitor-mysql.html">
+            
+                <a href="use-promethues-monitor-mysql.html">
+            
+                    
+                    监控MySQL运行状态：MySQLD Exporter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.1.2.3" data-path="install_blackbox_exporter.html">
+            
+                <a href="install_blackbox_exporter.html">
+            
+                    
+                    网络探测：Blackbox Exporter
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="custom_exporter_with_java.html">
+            
+                <a href="custom_exporter_with_java.html">
+            
+                    
+                    使用Java自定义Exporter
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.3.1" data-path="client_library_java.html">
+            
+                <a href="client_library_java.html">
+            
+                    
+                    使用Client Java构建Exporter程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3.2" data-path="custom_app_support_prometheus.html">
+            
+                <a href="custom_app_support_prometheus.html">
+            
+                    
+                    在应用中内置Prometheus支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="SUMMARY.html">
+            
+                <a href="SUMMARY.html">
+            
+                    
+                    小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../grafana/">
+            
+                <a href="../grafana/">
+            
+                    
+                    第5章 数据与可视化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../grafana/use-console-template.html">
+            
+                <a href="../grafana/use-console-template.html">
+            
+                    
+                    使用Console Template
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../grafana/grafana-intro.html">
+            
+                <a href="../grafana/grafana-intro.html">
+            
+                    
+                    Grafana的基本概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../grafana/grafana-panels.html">
+            
+                <a href="../grafana/grafana-panels.html">
+            
+                    
+                    Grafana与数据可视化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.3.1" data-path="../grafana/use_graph_panel.html">
+            
+                <a href="../grafana/use_graph_panel.html">
+            
+                    
+                    变化趋势：Graph面板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3.2" data-path="../grafana/use_heatmap_panel.html">
+            
+                <a href="../grafana/use_heatmap_panel.html">
+            
+                    
+                    分布统计：Heatmap面板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3.3" data-path="../grafana/use_singlestat_panel.html">
+            
+                <a href="../grafana/use_singlestat_panel.html">
+            
+                    
+                    当前状态：SingleStat面板
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4" data-path="../grafana/templating.html">
+            
+                <a href="../grafana/templating.html">
+            
+                    
+                    模板化Dashboard
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.5" data-path="../grafana/SUMMARY.html">
+            
+                <a href="../grafana/SUMMARY.html">
+            
+                    
+                    小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../ha/READMD.html">
+            
+                <a href="../ha/READMD.html">
+            
+                    
+                    第6章 集群与高可用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../ha/prometheus-local-storage.html">
+            
+                <a href="../ha/prometheus-local-storage.html">
+            
+                    
+                    本地存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="../ha/prometheus-remote-storage.html">
+            
+                <a href="../ha/prometheus-remote-storage.html">
+            
+                    
+                    远程存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" data-path="../ha/scale-prometheus-with-federation.html">
+            
+                <a href="../ha/scale-prometheus-with-federation.html">
+            
+                    
+                    联邦集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4" data-path="../ha/prometheus-and-high-availability.html">
+            
+                <a href="../ha/prometheus-and-high-availability.html">
+            
+                    
+                    Prometheus高可用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.5" data-path="../ha/alertmanager-high-availability.html">
+            
+                <a href="../ha/alertmanager-high-availability.html">
+            
+                    
+                    Alertmanager高可用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.6" data-path="../ha/SUMMARY.html">
+            
+                <a href="../ha/SUMMARY.html">
+            
+                    
+                    小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../sd/">
+            
+                <a href="../sd/">
+            
+                    
+                    第7章 Prometheus服务发现
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.1" data-path="../sd/why-need-service-discovery.html">
+            
+                <a href="../sd/why-need-service-discovery.html">
+            
+                    
+                    Prometheus与服务发现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.2" data-path="../sd/service-discovery-with-file.html">
+            
+                <a href="../sd/service-discovery-with-file.html">
+            
+                    
+                    基于文件的服务发现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.3" data-path="../sd/service-discovery-with-consul.html">
+            
+                <a href="../sd/service-discovery-with-consul.html">
+            
+                    
+                    基于Consul的服务发现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.4" data-path="../sd/service-discovery-with-relabel.html">
+            
+                <a href="../sd/service-discovery-with-relabel.html">
+            
+                    
+                    服务发现与Relabel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5" data-path="../sd/SUMMARY.html">
+            
+                <a href="../sd/SUMMARY.html">
+            
+                    
+                    小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part III - Prometheus实战</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../kubernetes/READMD.html">
+            
+                <a href="../kubernetes/READMD.html">
+            
+                    
+                    第8章 监控Kubernetes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../kubernetes/kubernetes-with-minikube.html">
+            
+                <a href="../kubernetes/kubernetes-with-minikube.html">
+            
+                    
+                    初识Kubernetes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../kubernetes/deploy-prometheus-in-kubernetes.html">
+            
+                <a href="../kubernetes/deploy-prometheus-in-kubernetes.html">
+            
+                    
+                    部署Prometheus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../kubernetes/service-discovery-with-kubernetes.html">
+            
+                <a href="../kubernetes/service-discovery-with-kubernetes.html">
+            
+                    
+                    Kubernetes下的服务发现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../kubernetes/use-prometheus-monitor-kubernetes.html">
+            
+                <a href="../kubernetes/use-prometheus-monitor-kubernetes.html">
+            
+                    
+                    监控Kubernetes集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="../kubernetes/hap-with-prometheus.html">
+            
+                <a href="../kubernetes/hap-with-prometheus.html">
+            
+                    
+                    基于Prometheus的弹性伸缩
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.6" data-path="../kubernetes/SUMMARY.html">
+            
+                <a href="../kubernetes/SUMMARY.html">
+            
+                    
+                    小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../operator/">
+            
+                <a href="../operator/">
+            
+                    
+                    第9章 Prometheus Operator
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.1" data-path="../operator/what-is-prometheus-operator.html">
+            
+                <a href="../operator/what-is-prometheus-operator.html">
+            
+                    
+                    什么是Prometheus Operator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2" data-path="../operator/use-operator-manage-prometheus.html">
+            
+                <a href="../operator/use-operator-manage-prometheus.html">
+            
+                    
+                    使用Operator管理Prometheus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.3" data-path="../operator/use-operator-manage-monitor.html">
+            
+                <a href="../operator/use-operator-manage-monitor.html">
+            
+                    
+                    使用Operator管理监控配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4" data-path="../operator/use-custom-configuration-in-operator.html">
+            
+                <a href="../operator/use-custom-configuration-in-operator.html">
+            
+                    
+                    在Prometheus Operator中使用自定义配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.5" data-path="../operator/SUMMARY.html">
+            
+                <a href="../operator/SUMMARY.html">
+            
+                    
+                    小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../REFERENCES.html">
+            
+                <a href="../REFERENCES.html">
+            
+                    
+                    参考资料
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >网络探测：Blackbox Exporter</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7F51;&#x7EDC;&#x63A2;&#x6D4B;&#xFF1A;blackbox-exporter">&#x7F51;&#x7EDC;&#x63A2;&#x6D4B;&#xFF1A;Blackbox Exporter</h1>
+<p>&#x5728;&#x672C;&#x7AE0;&#x7684;&#x524D;&#x51E0;&#x4E2A;&#x5C0F;&#x8282;&#x4E2D;&#x6211;&#x4EEC;&#x4E3B;&#x8981;&#x4ECB;&#x7ECD;&#x4E86;Prometheus&#x4E0B;&#x5982;&#x4F55;&#x8FDB;&#x884C;&#x767D;&#x76D2;&#x76D1;&#x63A7;&#xFF0C;&#x6211;&#x4EEC;&#x76D1;&#x63A7;&#x4E3B;&#x673A;&#x7684;&#x8D44;&#x6E90;&#x7528;&#x91CF;&#x3001;&#x5BB9;&#x5668;&#x7684;&#x8FD0;&#x884C;&#x72B6;&#x6001;&#x3001;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x95F4;&#x4EF6;&#x7684;&#x8FD0;&#x884C;&#x6570;&#x636E;&#x3002; &#x8FD9;&#x4E9B;&#x90FD;&#x662F;&#x652F;&#x6301;&#x4E1A;&#x52A1;&#x548C;&#x670D;&#x52A1;&#x7684;&#x57FA;&#x7840;&#x8BBE;&#x65BD;&#xFF0C;&#x901A;&#x8FC7;&#x767D;&#x76D2;&#x80FD;&#x591F;&#x4E86;&#x89E3;&#x5176;&#x5185;&#x90E8;&#x7684;&#x5B9E;&#x9645;&#x8FD0;&#x884C;&#x72B6;&#x6001;&#xFF0C;&#x901A;&#x8FC7;&#x5BF9;&#x76D1;&#x63A7;&#x6307;&#x6807;&#x7684;&#x89C2;&#x5BDF;&#x80FD;&#x591F;&#x9884;&#x5224;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x4ECE;&#x800C;&#x5BF9;&#x6F5C;&#x5728;&#x7684;&#x4E0D;&#x786E;&#x5B9A;&#x56E0;&#x7D20;&#x8FDB;&#x884C;&#x4F18;&#x5316;&#x3002;&#x800C;&#x4ECE;&#x5B8C;&#x6574;&#x7684;&#x76D1;&#x63A7;&#x903B;&#x8F91;&#x7684;&#x89D2;&#x5EA6;&#xFF0C;&#x9664;&#x4E86;&#x5927;&#x91CF;&#x7684;&#x5E94;&#x7528;&#x767D;&#x76D2;&#x76D1;&#x63A7;&#x4EE5;&#x5916;&#xFF0C;&#x8FD8;&#x5E94;&#x8BE5;&#x6DFB;&#x52A0;&#x9002;&#x5F53;&#x7684;&#x9ED1;&#x76D2;&#x76D1;&#x63A7;&#x3002;&#x9ED1;&#x76D2;&#x76D1;&#x63A7;&#x5373;&#x4EE5;&#x7528;&#x6237;&#x7684;&#x8EAB;&#x4EFD;&#x6D4B;&#x8BD5;&#x670D;&#x52A1;&#x7684;&#x5916;&#x90E8;&#x53EF;&#x89C1;&#x6027;&#xFF0C;&#x5E38;&#x89C1;&#x7684;&#x9ED1;&#x76D2;&#x76D1;&#x63A7;&#x5305;&#x62EC;HTTP&#x63A2;&#x9488;&#x3001;TCP&#x63A2;&#x9488;&#x7B49;&#x7528;&#x4E8E;&#x68C0;&#x6D4B;&#x7AD9;&#x70B9;&#x6216;&#x8005;&#x670D;&#x52A1;&#x7684;&#x53EF;&#x8BBF;&#x95EE;&#x6027;&#xFF0C;&#x4EE5;&#x53CA;&#x8BBF;&#x95EE;&#x6548;&#x7387;&#x7B49;&#x3002;</p>
+<p>&#x9ED1;&#x76D2;&#x76D1;&#x63A7;&#x76F8;&#x8F83;&#x4E8E;&#x767D;&#x76D2;&#x76D1;&#x63A7;&#x6700;&#x5927;&#x7684;&#x4E0D;&#x540C;&#x5728;&#x4E8E;&#x9ED1;&#x76D2;&#x76D1;&#x63A7;&#x662F;&#x4EE5;&#x6545;&#x969C;&#x4E3A;&#x5BFC;&#x5411;&#x5F53;&#x6545;&#x969C;&#x53D1;&#x751F;&#x65F6;&#xFF0C;&#x9ED1;&#x76D2;&#x76D1;&#x63A7;&#x80FD;&#x5FEB;&#x901F;&#x53D1;&#x73B0;&#x6545;&#x969C;&#xFF0C;&#x800C;&#x767D;&#x76D2;&#x76D1;&#x63A7;&#x5219;&#x4FA7;&#x91CD;&#x4E8E;&#x4E3B;&#x52A8;&#x53D1;&#x73B0;&#x6216;&#x8005;&#x9884;&#x6D4B;&#x6F5C;&#x5728;&#x7684;&#x95EE;&#x9898;&#x3002;&#x4E00;&#x4E2A;&#x5B8C;&#x5584;&#x7684;&#x76D1;&#x63A7;&#x76EE;&#x6807;&#x662F;&#x8981;&#x80FD;&#x591F;&#x4ECE;&#x767D;&#x76D2;&#x7684;&#x89D2;&#x5EA6;&#x53D1;&#x73B0;&#x6F5C;&#x5728;&#x95EE;&#x9898;&#xFF0C;&#x80FD;&#x591F;&#x5728;&#x9ED1;&#x76D2;&#x7684;&#x89D2;&#x5EA6;&#x5FEB;&#x901F;&#x53D1;&#x73B0;&#x5DF2;&#x7ECF;&#x53D1;&#x751F;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
+<p><img src="static/blackbox-whitebox-tower.png" alt="&#x9ED1;&#x76D2;&#x76D1;&#x63A7;&#x548C;&#x767D;&#x76D2;&#x76D1;&#x63A7;"></p>
+<h2 id="&#x4F7F;&#x7528;blackbox-exporter">&#x4F7F;&#x7528;Blackbox Exporter</h2>
+<p>Blackbox Exporter&#x662F;Prometheus&#x793E;&#x533A;&#x63D0;&#x4F9B;&#x7684;&#x5B98;&#x65B9;&#x9ED1;&#x76D2;&#x76D1;&#x63A7;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C;&#x5176;&#x5141;&#x8BB8;&#x7528;&#x6237;&#x901A;&#x8FC7;&#xFF1A;HTTP&#x3001;HTTPS&#x3001;DNS&#x3001;TCP&#x4EE5;&#x53CA;ICMP&#x7684;&#x65B9;&#x5F0F;&#x5BF9;&#x7F51;&#x7EDC;&#x8FDB;&#x884C;&#x63A2;&#x6D4B;&#x3002;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;go get&#x547D;&#x4EE4;&#x83B7;&#x53D6;Blackbox Exporter&#x6E90;&#x7801;&#x5E76;&#x751F;&#x6210;&#x672C;&#x5730;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#xFF1A;</p>
+<pre><code>go get prometheus/blackbox_exporter
+</code></pre><p>&#x8FD0;&#x884C;Blackbox Exporter&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x7528;&#x6237;&#x63D0;&#x4F9B;&#x63A2;&#x9488;&#x7684;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#xFF0C;&#x8FD9;&#x4E9B;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#x53EF;&#x80FD;&#x662F;&#x4E00;&#x4E9B;&#x81EA;&#x5B9A;&#x4E49;&#x7684;HTTP&#x5934;&#x4FE1;&#x606F;&#xFF0C;&#x4E5F;&#x53EF;&#x80FD;&#x662F;&#x63A2;&#x6D4B;&#x65F6;&#x9700;&#x8981;&#x7684;&#x4E00;&#x4E9B;TSL&#x914D;&#x7F6E;&#xFF0C;&#x4E5F;&#x53EF;&#x80FD;&#x662F;&#x63A2;&#x9488;&#x672C;&#x8EAB;&#x7684;&#x9A8C;&#x8BC1;&#x884C;&#x4E3A;&#x3002;&#x5728;Blackbox Exporter&#x6BCF;&#x4E00;&#x4E2A;&#x63A2;&#x9488;&#x914D;&#x7F6E;&#x79F0;&#x4E3A;&#x4E00;&#x4E2A;module&#xFF0C;&#x5E76;&#x4E14;&#x4EE5;YAML&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x5F62;&#x5F0F;&#x63D0;&#x4F9B;&#x7ED9;Blackbox Exporter&#x3002; &#x6BCF;&#x4E00;&#x4E2A;module&#x4E3B;&#x8981;&#x5305;&#x542B;&#x4EE5;&#x4E0B;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#xFF0C;&#x5305;&#x62EC;&#x63A2;&#x9488;&#x7C7B;&#x578B;&#xFF08;prober&#xFF09;&#x3001;&#x9A8C;&#x8BC1;&#x8BBF;&#x95EE;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#xFF08;timeout&#xFF09;&#x3001;&#x4EE5;&#x53CA;&#x5F53;&#x524D;&#x63A2;&#x9488;&#x7684;&#x5177;&#x4F53;&#x914D;&#x7F6E;&#x9879;&#xFF1A;</p>
+<pre><code>  # &#x63A2;&#x9488;&#x7C7B;&#x578B;&#xFF1A;http&#x3001; tcp&#x3001; dns&#x3001; icmp.
+  prober: &lt;prober_string&gt;
+
+  # &#x8D85;&#x65F6;&#x65F6;&#x95F4;
+  [ timeout: &lt;duration&gt; ]
+
+  # &#x63A2;&#x9488;&#x7684;&#x8BE6;&#x7EC6;&#x914D;&#x7F6E;&#xFF0C;&#x6700;&#x591A;&#x53EA;&#x80FD;&#x914D;&#x7F6E;&#x5176;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;
+  [ http: &lt;http_probe&gt; ]
+  [ tcp: &lt;tcp_probe&gt; ]
+  [ dns: &lt;dns_probe&gt; ]
+  [ icmp: &lt;icmp_probe&gt; ]
+</code></pre><p>&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x7B80;&#x5316;&#x7684;&#x63A2;&#x9488;&#x914D;&#x7F6E;&#x6587;&#x4EF6;blockbox.yml&#xFF0C;&#x5305;&#x542B;&#x4E24;&#x4E2A;HTTP&#x63A2;&#x9488;&#x914D;&#x7F6E;&#x9879;&#xFF1A;</p>
+<pre><code>modules:
+  http_2xx:
+    prober: http
+    http:
+      method: GET
+  http_post_2xx:
+    prober: http
+    http:
+      method: POST
+</code></pre><p>&#x901A;&#x8FC7;&#x8FD0;&#x884C;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#xFF0C;&#x5E76;&#x6307;&#x5B9A;&#x4F7F;&#x7528;&#x7684;&#x63A2;&#x9488;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x542F;&#x52A8;Blockbox Exporter&#x5B9E;&#x4F8B;&#xFF1A;</p>
+<pre><code>blackbox_exporter --config.file=/etc/prometheus/blackbox.yml
+</code></pre><p>&#x542F;&#x52A8;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8BBF;&#x95EE;<a href="http://127.0.0.1:9115/probe?module=http_2xx&amp;target=baidu.com" target="_blank">http://127.0.0.1:9115/probe?module=http_2xx&amp;target=baidu.com</a>&#x5BF9;baidu.com&#x8FDB;&#x884C;&#x63A2;&#x6D4B;&#x3002;&#x8FD9;&#x91CC;&#x901A;&#x8FC7;&#x5728;URL&#x4E2D;&#x63D0;&#x4F9B;module&#x53C2;&#x6570;&#x6307;&#x5B9A;&#x4E86;&#x5F53;&#x524D;&#x4F7F;&#x7528;&#x7684;&#x63A2;&#x9488;&#xFF0C;target&#x53C2;&#x6570;&#x6307;&#x5B9A;&#x63A2;&#x6D4B;&#x76EE;&#x6807;&#xFF0C;&#x63A2;&#x9488;&#x7684;&#x63A2;&#x6D4B;&#x7ED3;&#x679C;&#x901A;&#x8FC7;Metrics&#x7684;&#x5F62;&#x5F0F;&#x8FD4;&#x56DE;&#xFF1A;</p>
+<pre><code># HELP probe_dns_lookup_time_seconds Returns the time taken for probe dns lookup in seconds
+# TYPE probe_dns_lookup_time_seconds gauge
+probe_dns_lookup_time_seconds 0.011633673
+# HELP probe_duration_seconds Returns how long the probe took to complete in seconds
+# TYPE probe_duration_seconds gauge
+probe_duration_seconds 0.117332275
+# HELP probe_failed_due_to_regex Indicates if probe failed due to regex
+# TYPE probe_failed_due_to_regex gauge
+probe_failed_due_to_regex 0
+# HELP probe_http_content_length Length of http content response
+# TYPE probe_http_content_length gauge
+probe_http_content_length 81
+# HELP probe_http_duration_seconds Duration of http request by phase, summed over all redirects
+# TYPE probe_http_duration_seconds gauge
+probe_http_duration_seconds{phase=&quot;connect&quot;} 0.055551141
+probe_http_duration_seconds{phase=&quot;processing&quot;} 0.049736019
+probe_http_duration_seconds{phase=&quot;resolve&quot;} 0.011633673
+probe_http_duration_seconds{phase=&quot;tls&quot;} 0
+probe_http_duration_seconds{phase=&quot;transfer&quot;} 3.8919e-05
+# HELP probe_http_redirects The number of redirects
+# TYPE probe_http_redirects gauge
+probe_http_redirects 0
+# HELP probe_http_ssl Indicates if SSL was used for the final redirect
+# TYPE probe_http_ssl gauge
+probe_http_ssl 0
+# HELP probe_http_status_code Response HTTP status code
+# TYPE probe_http_status_code gauge
+probe_http_status_code 200
+# HELP probe_http_version Returns the version of HTTP of the probe response
+# TYPE probe_http_version gauge
+probe_http_version 1.1
+# HELP probe_ip_protocol Specifies whether probe ip protocol is IP4 or IP6
+# TYPE probe_ip_protocol gauge
+probe_ip_protocol 4
+# HELP probe_success Displays whether or not the probe was a success
+# TYPE probe_success gauge
+probe_success 1
+</code></pre><p>&#x4ECE;&#x8FD4;&#x56DE;&#x7684;&#x6837;&#x672C;&#x4E2D;&#xFF0C;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x7AD9;&#x70B9;&#x7684;DNS&#x89E3;&#x6790;&#x8017;&#x65F6;&#x3001;&#x7AD9;&#x70B9;&#x54CD;&#x5E94;&#x65F6;&#x95F4;&#x3001;HTTP&#x54CD;&#x5E94;&#x72B6;&#x6001;&#x7801;&#x7B49;&#x7B49;&#x548C;&#x7AD9;&#x70B9;&#x8BBF;&#x95EE;&#x8D28;&#x91CF;&#x76F8;&#x5173;&#x7684;&#x76D1;&#x63A7;&#x6307;&#x6807;&#xFF0C;&#x4ECE;&#x800C;&#x5E2E;&#x52A9;&#x7BA1;&#x7406;&#x5458;&#x4E3B;&#x52A8;&#x7684;&#x53D1;&#x73B0;&#x6545;&#x969C;&#x548C;&#x95EE;&#x9898;&#x3002;</p>
+<h2 id="&#x4E0E;prometheus&#x96C6;&#x6210;">&#x4E0E;Prometheus&#x96C6;&#x6210;</h2>
+<p>&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5728;Prometheus&#x4E0B;&#x914D;&#x7F6E;&#x5BF9;Blockbox Exporter&#x5B9E;&#x4F8B;&#x7684;&#x91C7;&#x96C6;&#x4EFB;&#x52A1;&#x5373;&#x53EF;&#x3002;&#x6700;&#x76F4;&#x89C2;&#x7684;&#x914D;&#x7F6E;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<pre><code>- job_name: baidu_http2xx_probe
+  params:
+    module:
+    - http_2xx
+    target:
+    - baidu.com
+  metrics_path: /probe
+  static_configs:
+  - targets:
+    - 127.0.0.1:9115
+- job_name: prometheus_http2xx_probe
+  params:
+    module:
+    - http_2xx
+    target:
+    - prometheus.io
+  metrics_path: /probe
+  static_configs:
+  - targets:
+    - 127.0.0.1:9115
+</code></pre><p>&#x8FD9;&#x91CC;&#x5206;&#x522B;&#x914D;&#x7F6E;&#x4E86;&#x540D;&#x4E3A;baidu_http2x_probe&#x548C;prometheus_http2xx_probe&#x7684;&#x91C7;&#x96C6;&#x4EFB;&#x52A1;&#xFF0C;&#x5E76;&#x4E14;&#x901A;&#x8FC7;params&#x6307;&#x5B9A;&#x4F7F;&#x7528;&#x7684;&#x63A2;&#x9488;&#xFF08;module&#xFF09;&#x4EE5;&#x53CA;&#x63A2;&#x6D4B;&#x76EE;&#x6807;&#xFF08;target&#xFF09;&#x3002;</p>
+<p>&#x90A3;&#x95EE;&#x9898;&#x5C31;&#x6765;&#x4E86;&#xFF0C;&#x5047;&#x5982;&#x6211;&#x4EEC;&#x6709;N&#x4E2A;&#x76EE;&#x6807;&#x7AD9;&#x70B9;&#x4E14;&#x90FD;&#x9700;&#x8981;M&#x79CD;&#x63A2;&#x6D4B;&#x65B9;&#x5F0F;&#xFF0C;&#x90A3;&#x4E48;Prometheus&#x4E2D;&#x5C06;&#x5305;&#x542B;N * M&#x4E2A;&#x91C7;&#x96C6;&#x4EFB;&#x52A1;&#xFF0C;&#x4ECE;&#x914D;&#x7F6E;&#x7BA1;&#x7406;&#x7684;&#x89D2;&#x5EA6;&#x6765;&#x8BF4;&#x663E;&#x7136;&#x662F;&#x4E0D;&#x53EF;&#x63A5;&#x53D7;&#x7684;&#x3002; &#x5728;&#x7B2C;7&#x7AE0;&#x7684;&#x201C;&#x670D;&#x52A1;&#x53D1;&#x73B0;&#x4E0E;Relabel&#x201D;&#x5C0F;&#x8282;&#xFF0C;&#x6211;&#x4EEC;&#x4ECB;&#x7ECD;&#x4E86;Prometheus&#x7684;Relabeling&#x80FD;&#x529B;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x91C7;&#x7528;Relabling&#x7684;&#x65B9;&#x5F0F;&#x5BF9;&#x8FD9;&#x4E9B;&#x914D;&#x7F6E;&#x8FDB;&#x884C;&#x7B80;&#x5316;&#xFF0C;&#x914D;&#x7F6E;&#x65B9;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>scrape_configs:
+  - job_name: &apos;blackbox&apos;
+    metrics_path: /probe
+    params:
+      module: [http_2xx]
+    static_configs:
+      - targets:
+        - http://prometheus.io    # Target to probe with http.
+        - https://prometheus.io   # Target to probe with https.
+        - http://example.com:8080 # Target to probe with http on port 8080.
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: 127.0.0.1:9115
+</code></pre><p>&#x8FD9;&#x91CC;&#x9488;&#x5BF9;&#x6BCF;&#x4E00;&#x4E2A;&#x63A2;&#x9488;&#x670D;&#x52A1;&#xFF08;&#x5982;http_2xx&#xFF09;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x91C7;&#x96C6;&#x4EFB;&#x52A1;&#xFF0C;&#x5E76;&#x4E14;&#x76F4;&#x63A5;&#x5C06;&#x4EFB;&#x52A1;&#x7684;&#x91C7;&#x96C6;&#x76EE;&#x6807;&#x5B9A;&#x4E49;&#x4E3A;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x63A2;&#x6D4B;&#x7684;&#x7AD9;&#x70B9;&#x3002;&#x5728;&#x91C7;&#x96C6;&#x6837;&#x672C;&#x6570;&#x636E;&#x4E4B;&#x524D;&#x901A;&#x8FC7;relabel_configs&#x5BF9;&#x91C7;&#x96C6;&#x4EFB;&#x52A1;&#x8FDB;&#x884C;&#x52A8;&#x6001;&#x8BBE;&#x7F6E;&#x3002; </p>
+<ul>
+<li>&#x7B2C;1&#x6B65;&#xFF0C;&#x6839;&#x636E;Target&#x5B9E;&#x4F8B;&#x7684;&#x5730;&#x5740;&#xFF0C;&#x5199;&#x5165;<code>__param_target</code>&#x6807;&#x7B7E;&#x4E2D;&#x3002;<code>__param_&lt;name&gt;</code>&#x5F62;&#x5F0F;&#x7684;&#x6807;&#x7B7E;&#x8868;&#x793A;&#xFF0C;&#x5728;&#x91C7;&#x96C6;&#x4EFB;&#x52A1;&#x65F6;&#x4F1A;&#x5728;&#x8BF7;&#x6C42;&#x76EE;&#x6807;&#x5730;&#x5740;&#x4E2D;&#x6DFB;&#x52A0;<code>&lt;name&gt;</code>&#x53C2;&#x6570;&#xFF0C;&#x7B49;&#x540C;&#x4E8E;params&#x7684;&#x8BBE;&#x7F6E;&#xFF1B;</li>
+<li>&#x7B2C;2&#x6B65;&#xFF0C;&#x83B7;&#x53D6;__param_target&#x7684;&#x503C;&#xFF0C;&#x5E76;&#x8986;&#x5199;&#x5230;instance&#x6807;&#x7B7E;&#x4E2D;&#xFF1B;</li>
+<li>&#x7B2C;3&#x6B65;&#xFF0C;&#x8986;&#x5199;Target&#x5B9E;&#x4F8B;&#x7684;<code>__address__</code>&#x6807;&#x7B7E;&#x503C;&#x4E3A;BlockBox Exporter&#x5B9E;&#x4F8B;&#x7684;&#x8BBF;&#x95EE;&#x5730;&#x5740;&#x3002;</li>
+</ul>
+<p>&#x901A;&#x8FC7;&#x4EE5;&#x4E0A;3&#x4E2A;relabel&#x6B65;&#x9AA4;&#xFF0C;&#x5373;&#x53EF;&#x5927;&#x5927;&#x7B80;&#x5316;Prometheus&#x4EFB;&#x52A1;&#x914D;&#x7F6E;&#x7684;&#x590D;&#x6742;&#x5EA6;:</p>
+<p><img src="static/relabel_blackbox_targets.png" alt="Blackbox Target&#x5B9E;&#x4F8B;"></p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;Blackbox&#x4E2D;&#x5E38;&#x7528;&#x7684;HTTP&#x63A2;&#x9488;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;</p>
+<h2 id="http&#x63A2;&#x9488;">HTTP&#x63A2;&#x9488;</h2>
+<p>HTTP&#x63A2;&#x9488;&#x662F;&#x8FDB;&#x884C;&#x9ED1;&#x76D2;&#x76D1;&#x63A7;&#x65F6;&#x6700;&#x5E38;&#x7528;&#x7684;&#x63A2;&#x9488;&#x4E4B;&#x4E00;&#xFF0C;&#x901A;&#x8FC7;HTTP&#x63A2;&#x9488;&#x80FD;&#x591F;&#x7F51;&#x7AD9;&#x6216;&#x8005;HTTP&#x670D;&#x52A1;&#x5EFA;&#x7ACB;&#x6709;&#x6548;&#x7684;&#x76D1;&#x63A7;&#xFF0C;&#x5305;&#x62EC;&#x5176;&#x672C;&#x8EAB;&#x7684;&#x53EF;&#x7528;&#x6027;&#xFF0C;&#x4EE5;&#x53CA;&#x7528;&#x6237;&#x4F53;&#x9A8C;&#x76F8;&#x5173;&#x7684;&#x5982;&#x54CD;&#x5E94;&#x65F6;&#x95F4;&#x7B49;&#x7B49;&#x3002;&#x9664;&#x4E86;&#x80FD;&#x591F;&#x5728;&#x670D;&#x52A1;&#x51FA;&#x73B0;&#x5F02;&#x5E38;&#x7684;&#x65F6;&#x5019;&#x53CA;&#x65F6;&#x62A5;&#x8B66;&#xFF0C;&#x8FD8;&#x80FD;&#x5E2E;&#x52A9;&#x7CFB;&#x7EDF;&#x7BA1;&#x7406;&#x5458;&#x5206;&#x6790;&#x548C;&#x4F18;&#x5316;&#x7F51;&#x7AD9;&#x4F53;&#x9A8C;&#x3002;</p>
+<p>&#x5728;&#x4E0A;&#x4E00;&#x5C0F;&#x8282;&#x8BB2;&#x8FC7;&#xFF0C;Blockbox Exporter&#x4E2D;&#x6240;&#x6709;&#x7684;&#x63A2;&#x9488;&#x5747;&#x662F;&#x4EE5;Module&#x7684;&#x4FE1;&#x606F;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#x3002;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF0C;&#x914D;&#x7F6E;&#x4E86;&#x4E00;&#x4E2A;&#x6700;&#x7B80;&#x5355;&#x7684;HTTP&#x63A2;&#x9488;&#xFF1A;</p>
+<pre><code>modules:
+  http_2xx_example:
+    prober: http
+    http:
+</code></pre><p>&#x901A;&#x8FC7;prober&#x914D;&#x7F6E;&#x9879;&#x6307;&#x5B9A;&#x63A2;&#x9488;&#x7C7B;&#x578B;&#x3002;&#x914D;&#x7F6E;&#x9879;http&#x7528;&#x4E8E;&#x81EA;&#x5B9A;&#x4E49;&#x63A2;&#x9488;&#x7684;&#x63A2;&#x6D4B;&#x65B9;&#x5F0F;&#xFF0C;&#x8FD9;&#x91CC;&#x6709;&#x6CA1;&#x5BF9;http&#x914D;&#x7F6E;&#x9879;&#x6DFB;&#x52A0;&#x4EFB;&#x4F55;&#x914D;&#x7F6E;&#xFF0C;&#x8868;&#x793A;&#x5B8C;&#x5168;&#x4F7F;&#x7528;HTTP&#x63A2;&#x9488;&#x7684;&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;&#xFF0C;&#x8BE5;&#x63A2;&#x9488;&#x5C06;&#x4F7F;&#x7528;HTTP GET&#x7684;&#x65B9;&#x5F0F;&#x5BF9;&#x76EE;&#x6807;&#x670D;&#x52A1;&#x8FDB;&#x884C;&#x63A2;&#x6D4B;&#xFF0C;&#x5E76;&#x4E14;&#x9A8C;&#x8BC1;&#x8FD4;&#x56DE;&#x72B6;&#x6001;&#x7801;&#x662F;&#x5426;&#x4E3A;2XX&#xFF0C;&#x662F;&#x5219;&#x8868;&#x793A;&#x9A8C;&#x8BC1;&#x6210;&#x529F;&#xFF0C;&#x5426;&#x5219;&#x5931;&#x8D25;&#x3002;</p>
+<h3 id="&#x81EA;&#x5B9A;&#x4E49;http&#x8BF7;&#x6C42;">&#x81EA;&#x5B9A;&#x4E49;HTTP&#x8BF7;&#x6C42;</h3>
+<p>HTTP&#x670D;&#x52A1;&#x901A;&#x5E38;&#x4F1A;&#x4EE5;&#x4E0D;&#x540C;&#x7684;&#x5F62;&#x5F0F;&#x5BF9;&#x5916;&#x5C55;&#x73B0;&#xFF0C;&#x6709;&#x4E9B;&#x53EF;&#x80FD;&#x5C31;&#x662F;&#x4E00;&#x4E9B;&#x7B80;&#x5355;&#x7684;&#x7F51;&#x9875;&#xFF0C;&#x800C;&#x6709;&#x4E9B;&#x5219;&#x53EF;&#x80FD;&#x662F;&#x4E00;&#x4E9B;&#x57FA;&#x4E8E;REST&#x7684;API&#x670D;&#x52A1;&#x3002; &#x5BF9;&#x4E8E;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;HTTP&#x7684;&#x63A2;&#x6D4B;&#x9700;&#x8981;&#x7BA1;&#x7406;&#x5458;&#x80FD;&#x591F;&#x5BF9;HTTP&#x63A2;&#x9488;&#x7684;&#x884C;&#x4E3A;&#x8FDB;&#x884C;&#x66F4;&#x591A;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x8BBE;&#x7F6E;&#xFF0C;&#x5305;&#x62EC;&#xFF1A;HTTP&#x8BF7;&#x6C42;&#x65B9;&#x6CD5;&#x3001;HTTP&#x5934;&#x4FE1;&#x606F;&#x3001;&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x7B49;&#x3002;&#x5BF9;&#x4E8E;&#x67D0;&#x4E9B;&#x542F;&#x7528;&#x4E86;&#x5B89;&#x5168;&#x8BA4;&#x8BC1;&#x7684;&#x670D;&#x52A1;&#x8FD8;&#x9700;&#x8981;&#x80FD;&#x591F;&#x5BF9;HTTP&#x63A2;&#x6D4B;&#x8BBE;&#x7F6E;&#x76F8;&#x5E94;&#x7684;Auth&#x652F;&#x6301;&#x3002;&#x5BF9;&#x4E8E;HTTPS&#x7C7B;&#x578B;&#x7684;&#x670D;&#x52A1;&#x8FD8;&#x9700;&#x8981;&#x80FD;&#x591F;&#x5BF9;&#x8BC1;&#x4E66;&#x8FDB;&#x884C;&#x81EA;&#x5B9A;&#x4E49;&#x8BBE;&#x7F6E;&#x3002;</p>
+<p>&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF0C;&#x8FD9;&#x91CC;&#x901A;&#x8FC7;method&#x5B9A;&#x4E49;&#x4E86;&#x63A2;&#x6D4B;&#x65F6;&#x4F7F;&#x7528;&#x7684;&#x8BF7;&#x6C42;&#x65B9;&#x6CD5;&#xFF0C;&#x5BF9;&#x4E8E;&#x4E00;&#x4E9B;&#x9700;&#x8981;&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x7684;&#x670D;&#x52A1;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;headers&#x5B9A;&#x4E49;&#x76F8;&#x5173;&#x7684;&#x8BF7;&#x6C42;&#x5934;&#x4FE1;&#x606F;&#xFF0C;&#x4F7F;&#x7528;body&#x5B9A;&#x4E49;&#x8BF7;&#x6C42;&#x5185;&#x5BB9;&#xFF1A;</p>
+<pre><code>http_post_2xx:
+    prober: http
+    timeout: 5s
+    http:
+      method: POST
+      headers:
+        Content-Type: application/json
+      body: &apos;{}&apos;
+</code></pre><p>&#x5982;&#x679C;HTTP&#x670D;&#x52A1;&#x542F;&#x7528;&#x4E86;&#x5B89;&#x5168;&#x8BA4;&#x8BC1;&#xFF0C;Blockbox Exporter&#x5185;&#x7F6E;&#x4E86;&#x5BF9;basic_auth&#x7684;&#x652F;&#x6301;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8BBE;&#x7F6E;&#x76F8;&#x5173;&#x7684;&#x8BA4;&#x8BC1;&#x4FE1;&#x606F;&#x5373;&#x53EF;&#xFF1A;</p>
+<pre><code>http_basic_auth_example:
+    prober: http
+    timeout: 5s
+    http:
+      method: POST
+      headers:
+        Host: &quot;login.example.com&quot;
+      basic_auth:
+        username: &quot;username&quot;
+        password: &quot;mysecret&quot;
+</code></pre><p>&#x5BF9;&#x4E8E;&#x4F7F;&#x7528;&#x4E86;Bear Token&#x7684;&#x670D;&#x52A1;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;bearer_token&#x914D;&#x7F6E;&#x9879;&#x76F4;&#x63A5;&#x6307;&#x5B9A;&#x4EE4;&#x724C;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6216;&#x8005;&#x901A;&#x8FC7;bearer_token_file&#x6307;&#x5B9A;&#x4EE4;&#x724C;&#x6587;&#x4EF6;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;&#x4E00;&#x4E9B;&#x542F;&#x7528;&#x4E86;HTTPS&#x7684;&#x670D;&#x52A1;&#xFF0C;&#x4F46;&#x662F;&#x9700;&#x8981;&#x81EA;&#x5B9A;&#x4E49;&#x8BC1;&#x4E66;&#x7684;&#x670D;&#x52A1;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;tls_config&#x6307;&#x5B9A;&#x76F8;&#x5173;&#x7684;&#x8BC1;&#x4E66;&#x4FE1;&#x606F;&#xFF1A;</p>
+<pre><code> http_custom_ca_example:
+    prober: http
+    http:
+      method: GET
+      tls_config:
+        ca_file: &quot;/certs/my_cert.crt&quot;
+</code></pre><h3 id="&#x81EA;&#x5B9A;&#x4E49;&#x63A2;&#x9488;&#x884C;&#x4E3A;">&#x81EA;&#x5B9A;&#x4E49;&#x63A2;&#x9488;&#x884C;&#x4E3A;</h3>
+<p>&#x5728;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;HTTP&#x63A2;&#x9488;&#x53EA;&#x4F1A;&#x5BF9;HTTP&#x8FD4;&#x56DE;&#x72B6;&#x6001;&#x7801;&#x8FDB;&#x884C;&#x6821;&#x9A8C;&#xFF0C;&#x5982;&#x679C;&#x72B6;&#x6001;&#x7801;&#x4E3A;2XX&#xFF08;200 &lt;= StatusCode &lt; 300&#xFF09;&#x5219;&#x8868;&#x793A;&#x63A2;&#x6D4B;&#x6210;&#x529F;&#xFF0C;&#x5E76;&#x4E14;&#x63A2;&#x9488;&#x8FD4;&#x56DE;&#x7684;&#x6307;&#x6807;probe_success&#x503C;&#x4E3A;1&#x3002;</p>
+<p>&#x5982;&#x679C;&#x7528;&#x6237;&#x9700;&#x8981;&#x6307;&#x5B9A;HTTP&#x8FD4;&#x56DE;&#x72B6;&#x6001;&#x7801;&#xFF0C;&#x6216;&#x8005;&#x5BF9;HTTP&#x7248;&#x672C;&#x6709;&#x7279;&#x6B8A;&#x8981;&#x6C42;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;valid_http_versions&#x548C;valid_status_codes&#x8FDB;&#x884C;&#x5B9A;&#x4E49;&#xFF1A;</p>
+<pre><code>  http_2xx_example:
+    prober: http
+    timeout: 5s
+    http:
+      valid_http_versions: [&quot;HTTP/1.1&quot;, &quot;HTTP/2&quot;]
+      valid_status_codes: []
+</code></pre><p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;Blockbox&#x8FD4;&#x56DE;&#x7684;&#x6837;&#x672C;&#x6570;&#x636E;&#x4E2D;&#x4E5F;&#x4F1A;&#x5305;&#x542B;&#x6307;&#x6807;probe_http_ssl&#xFF0C;&#x7528;&#x4E8E;&#x8868;&#x660E;&#x5F53;&#x524D;&#x63A2;&#x9488;&#x662F;&#x5426;&#x4F7F;&#x7528;&#x4E86;SSL&#xFF1A;</p>
+<pre><code># HELP probe_http_ssl Indicates if SSL was used for the final redirect
+# TYPE probe_http_ssl gauge
+probe_http_ssl 0
+</code></pre><p>&#x800C;&#x5982;&#x679C;&#x7528;&#x6237;&#x5BF9;&#x4E8E;HTTP&#x670D;&#x52A1;&#x662F;&#x5426;&#x542F;&#x7528;SSL&#x6709;&#x5F3A;&#x5236;&#x7684;&#x6807;&#x51C6;&#x3002;&#x5219;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;fail_if_ssl&#x548C;fail_if_not_ssl&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#x3002;fail_if_ssl&#x4E3A;true&#x65F6;&#xFF0C;&#x8868;&#x793A;&#x5982;&#x679C;&#x7AD9;&#x70B9;&#x542F;&#x7528;&#x4E86;SSL&#x5219;&#x63A2;&#x9488;&#x5931;&#x8D25;&#xFF0C;&#x53CD;&#x4E4B;&#x6210;&#x529F;&#x3002;fail_if_not_ssl&#x521A;&#x597D;&#x76F8;&#x53CD;&#x3002;</p>
+<pre><code>  http_2xx_example:
+    prober: http
+    timeout: 5s
+    http:
+      valid_status_codes: []
+      method: GET
+      no_follow_redirects: false
+      fail_if_ssl: false
+      fail_if_not_ssl: false
+</code></pre><p>&#x9664;&#x4E86;&#x57FA;&#x4E8E;HTTP&#x72B6;&#x6001;&#x7801;&#xFF0C;HTTP&#x534F;&#x8BAE;&#x7248;&#x672C;&#x4EE5;&#x53CA;&#x662F;&#x5426;&#x542F;&#x7528;SSL&#x4F5C;&#x4E3A;&#x63A7;&#x5236;&#x63A2;&#x9488;&#x63A2;&#x6D4B;&#x884C;&#x4E3A;&#x6210;&#x529F;&#x4E0E;&#x5426;&#x7684;&#x6807;&#x51C6;&#x4EE5;&#x5916;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x5339;&#x914D;HTTP&#x670D;&#x52A1;&#x7684;&#x54CD;&#x5E94;&#x5185;&#x5BB9;&#x3002;&#x4F7F;&#x7528;fail_if_matches_regexp&#x548C;fail_if_not_matches_regexp&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x4E00;&#x7EC4;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x7528;&#x4E8E;&#x9A8C;&#x8BC1;HTTP&#x8FD4;&#x56DE;&#x5185;&#x5BB9;&#x662F;&#x5426;&#x7B26;&#x5408;&#x6216;&#x8005;&#x4E0D;&#x7B26;&#x5408;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
+<pre><code>  http_2xx_example:
+    prober: http
+    timeout: 5s
+    http:
+      method: GET
+      fail_if_matches_regexp:
+        - &quot;Could not connect to database&quot;
+      fail_if_not_matches_regexp:
+        - &quot;Download the latest version here&quot;
+</code></pre><p>&#x6700;&#x540E;&#x9700;&#x8981;&#x63D0;&#x9192;&#x7684;&#x65F6;&#xFF0C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;HTTP&#x63A2;&#x9488;&#x4F1A;&#x8D70;IPV6&#x7684;&#x534F;&#x8BAE;&#x3002; &#x5728;&#x5927;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;preferred_ip_protocol=ip4&#x5F3A;&#x5236;&#x901A;&#x8FC7;IPV4&#x7684;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x63A2;&#x6D4B;&#x3002;&#x5728;Bloackbox&#x54CD;&#x5E94;&#x7684;&#x76D1;&#x63A7;&#x6837;&#x672C;&#x4E2D;&#xFF0C;&#x4E5F;&#x4F1A;&#x901A;&#x8FC7;&#x6307;&#x6807;probe_ip_protocol&#xFF0C;&#x8868;&#x660E;&#x5F53;&#x524D;&#x7684;&#x534F;&#x8BAE;&#x4F7F;&#x7528;&#x60C5;&#x51B5;&#xFF1A;</p>
+<pre><code># HELP probe_ip_protocol Specifies whether probe ip protocol is IP4 or IP6
+# TYPE probe_ip_protocol gauge
+probe_ip_protocol 6
+</code></pre><p>&#x9664;&#x4E86;&#x652F;&#x6301;&#x5BF9;HTTP&#x534F;&#x8BAE;&#x8FDB;&#x884C;&#x7F51;&#x7EDC;&#x63A2;&#x6D4B;&#x4EE5;&#x5916;&#xFF0C;Blackbox&#x8FD8;&#x652F;&#x6301;&#x5BF9;TCP&#x3001;DNS&#x3001;ICMP&#x7B49;&#x5176;&#x4ED6;&#x7F51;&#x7EDC;&#x534F;&#x8BAE;&#xFF0C;&#x611F;&#x5174;&#x8DA3;&#x7684;&#x8BFB;&#x8005;&#x53EF;&#x4EE5;&#x4ECE;Blackbox&#x7684;Github&#x9879;&#x76EE;&#x4E2D;&#x83B7;&#x53D6;&#x66F4;&#x591A;&#x4F7F;&#x7528;&#x4FE1;&#x606F;<img src="https://github.com/prometheus/blackbox_exporter" alt="https://github.com/prometheus/blackbox_exporter">&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="use-promethues-monitor-mysql.html" class="navigation navigation-prev " aria-label="Previous page: 监控MySQL运行状态：MySQLD Exporter">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="custom_exporter_with_java.html" class="navigation navigation-next " aria-label="Next page: 使用Java自定义Exporter">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"网络探测：Blackbox Exporter","level":"3.1.2.3","depth":3,"next":{"title":"使用Java自定义Exporter","level":"3.1.3","depth":2,"path":"exporter/custom_exporter_with_java.md","ref":"./exporter/custom_exporter_with_java.md","articles":[{"title":"使用Client Java构建Exporter程序","level":"3.1.3.1","depth":3,"path":"exporter/client_library_java.md","ref":"./exporter/client_library_java.md","articles":[]},{"title":"在应用中内置Prometheus支持","level":"3.1.3.2","depth":3,"path":"exporter/custom_app_support_prometheus.md","ref":"./exporter/custom_app_support_prometheus.md","articles":[]}]},"previous":{"title":"监控MySQL运行状态：MySQLD Exporter","level":"3.1.2.2","depth":3,"path":"exporter/use-promethues-monitor-mysql.md","ref":"./exporter/use-promethues-monitor-mysql.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"exporter/install_blackbox_exporter.md","mtime":"2019-06-28T14:06:50.935Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-28T14:56:14.926Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

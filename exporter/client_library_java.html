@@ -1,0 +1,1596 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>使用Client Java构建Exporter程序 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="custom_app_support_prometheus.html" />
+    
+    
+    <link rel="prev" href="custom_exporter_with_java.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Introduction.html">
+            
+                <a href="../Introduction.html">
+            
+                    
+                    全书组织
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part I - Prometheus基础</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../quickstart/">
+            
+                <a href="../quickstart/">
+            
+                    
+                    第1章 介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../quickstart/why-monitor.html">
+            
+                <a href="../quickstart/why-monitor.html">
+            
+                    
+                    Prometheus简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../quickstart/prometheus-quick-start.html">
+            
+                <a href="../quickstart/prometheus-quick-start.html">
+            
+                    
+                    初识Prometheus
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.2.1" data-path="../quickstart/install-prometheus-server.html">
+            
+                <a href="../quickstart/install-prometheus-server.html">
+            
+                    
+                    安装Prometheus Server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2.2" data-path="../quickstart/use-node-exporter.html">
+            
+                <a href="../quickstart/use-node-exporter.html">
+            
+                    
+                    使用Node Exporter采集主机数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2.3" data-path="../quickstart/promql_quickstart.html">
+            
+                <a href="../quickstart/promql_quickstart.html">
+            
+                    
+                    使用PromQL查询监控数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2.4" data-path="../quickstart/use-grafana-create-dashboard.html">
+            
+                <a href="../quickstart/use-grafana-create-dashboard.html">
+            
+                    
+                    监控数据可视化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../quickstart/prometheus-job-and-instance.html">
+            
+                <a href="../quickstart/prometheus-job-and-instance.html">
+            
+                    
+                    任务和实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../quickstart/prometheus-arch.html">
+            
+                <a href="../quickstart/prometheus-arch.html">
+            
+                    
+                    Prometheus核心组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../quickstart/SUMMARY.html">
+            
+                <a href="../quickstart/SUMMARY.html">
+            
+                    
+                    小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../promql/">
+            
+                <a href="../promql/">
+            
+                    
+                    第2章 探索PromQL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../promql/what-is-prometheus-metrics-and-labels.html">
+            
+                <a href="../promql/what-is-prometheus-metrics-and-labels.html">
+            
+                    
+                    理解时间序列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../promql/prometheus-metrics-types.html">
+            
+                <a href="../promql/prometheus-metrics-types.html">
+            
+                    
+                    Metrics类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../promql/prometheus-query-language.html">
+            
+                <a href="../promql/prometheus-query-language.html">
+            
+                    
+                    初识PromQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../promql/prometheus-promql-operators-v2.html">
+            
+                <a href="../promql/prometheus-promql-operators-v2.html">
+            
+                    
+                    PromQL操作符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.5" data-path="../promql/prometheus-aggr-ops.html">
+            
+                <a href="../promql/prometheus-aggr-ops.html">
+            
+                    
+                    PromQL聚合操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.6" data-path="../promql/prometheus-promql-functions.html">
+            
+                <a href="../promql/prometheus-promql-functions.html">
+            
+                    
+                    PromQL内置函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.7" data-path="../promql/prometheus-promql-with-http-api.html">
+            
+                <a href="../promql/prometheus-promql-with-http-api.html">
+            
+                    
+                    在HTTP API中使用PromQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.8" data-path="../promql/prometheus-promql-best-praticase.html">
+            
+                <a href="../promql/prometheus-promql-best-praticase.html">
+            
+                    
+                    最佳实践：4个黄金指标和USE方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.9" data-path="../promql/SUMMARY.html">
+            
+                <a href="../promql/SUMMARY.html">
+            
+                    
+                    小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../alert/">
+            
+                <a href="../alert/">
+            
+                    
+                    第3章 Prometheus告警处理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../alert/prometheus-alert-manager-overview.html">
+            
+                <a href="../alert/prometheus-alert-manager-overview.html">
+            
+                    
+                    Prometheus告警简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../alert/prometheus-alert-rule.html">
+            
+                <a href="../alert/prometheus-alert-rule.html">
+            
+                    
+                    自定义Prometheus告警规则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../alert/install-alert-manager.html">
+            
+                <a href="../alert/install-alert-manager.html">
+            
+                    
+                    部署AlertManager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="../alert/alert-manager-config.html">
+            
+                <a href="../alert/alert-manager-config.html">
+            
+                    
+                    Alertmanager配置概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="../alert/alert-manager-route.html">
+            
+                <a href="../alert/alert-manager-route.html">
+            
+                    
+                    基于标签的告警处理路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6" data-path="../alert/alert-manager-use-receiver.html">
+            
+                <a href="../alert/alert-manager-use-receiver.html">
+            
+                    
+                    使用Receiver接收告警信息
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.6.1" data-path="../alert/alert-with-smtp.html">
+            
+                <a href="../alert/alert-with-smtp.html">
+            
+                    
+                    集成邮件系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6.2" data-path="../alert/alert-with-slack.html">
+            
+                <a href="../alert/alert-with-slack.html">
+            
+                    
+                    集成Slack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6.3" data-path="../alert/alert-with-wechat.html">
+            
+                <a href="../alert/alert-with-wechat.html">
+            
+                    
+                    集成企业微信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6.4" data-path="../alert/alert-manager-extension-with-webhook.html">
+            
+                <a href="../alert/alert-manager-extension-with-webhook.html">
+            
+                    
+                    集成钉钉：基于Webhook的扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.7" data-path="../alert/alert-template.html">
+            
+                <a href="../alert/alert-template.html">
+            
+                    
+                    告警模板详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.8" data-path="../alert/alert-manager-inhibit.html">
+            
+                <a href="../alert/alert-manager-inhibit.html">
+            
+                    
+                    屏蔽告警通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.9" data-path="../alert/prometheus-recoding-rules.html">
+            
+                <a href="../alert/prometheus-recoding-rules.html">
+            
+                    
+                    使用Recoding Rules优化性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.10" data-path="../alert/SUMMARY.html">
+            
+                <a href="../alert/SUMMARY.html">
+            
+                    
+                    小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part II - Prometheus进阶</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第4章 Exporter详解
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="what-is-prometheus-exporter.html">
+            
+                <a href="what-is-prometheus-exporter.html">
+            
+                    
+                    Exporter是什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="commonly-eporter-usage.html">
+            
+                <a href="commonly-eporter-usage.html">
+            
+                    
+                    常用Exporter
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.2.1" data-path="use-prometheus-monitor-container.html">
+            
+                <a href="use-prometheus-monitor-container.html">
+            
+                    
+                    容器监控：cAdvisor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.2" data-path="use-promethues-monitor-mysql.html">
+            
+                <a href="use-promethues-monitor-mysql.html">
+            
+                    
+                    监控MySQL运行状态：MySQLD Exporter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.3" data-path="install_blackbox_exporter.html">
+            
+                <a href="install_blackbox_exporter.html">
+            
+                    
+                    网络探测：Blackbox Exporter
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="custom_exporter_with_java.html">
+            
+                <a href="custom_exporter_with_java.html">
+            
+                    
+                    使用Java自定义Exporter
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="3.1.3.1" data-path="client_library_java.html">
+            
+                <a href="client_library_java.html">
+            
+                    
+                    使用Client Java构建Exporter程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3.2" data-path="custom_app_support_prometheus.html">
+            
+                <a href="custom_app_support_prometheus.html">
+            
+                    
+                    在应用中内置Prometheus支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="SUMMARY.html">
+            
+                <a href="SUMMARY.html">
+            
+                    
+                    小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../grafana/">
+            
+                <a href="../grafana/">
+            
+                    
+                    第5章 数据与可视化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../grafana/use-console-template.html">
+            
+                <a href="../grafana/use-console-template.html">
+            
+                    
+                    使用Console Template
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../grafana/grafana-intro.html">
+            
+                <a href="../grafana/grafana-intro.html">
+            
+                    
+                    Grafana的基本概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../grafana/grafana-panels.html">
+            
+                <a href="../grafana/grafana-panels.html">
+            
+                    
+                    Grafana与数据可视化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.3.1" data-path="../grafana/use_graph_panel.html">
+            
+                <a href="../grafana/use_graph_panel.html">
+            
+                    
+                    变化趋势：Graph面板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3.2" data-path="../grafana/use_heatmap_panel.html">
+            
+                <a href="../grafana/use_heatmap_panel.html">
+            
+                    
+                    分布统计：Heatmap面板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3.3" data-path="../grafana/use_singlestat_panel.html">
+            
+                <a href="../grafana/use_singlestat_panel.html">
+            
+                    
+                    当前状态：SingleStat面板
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4" data-path="../grafana/templating.html">
+            
+                <a href="../grafana/templating.html">
+            
+                    
+                    模板化Dashboard
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.5" data-path="../grafana/SUMMARY.html">
+            
+                <a href="../grafana/SUMMARY.html">
+            
+                    
+                    小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../ha/READMD.html">
+            
+                <a href="../ha/READMD.html">
+            
+                    
+                    第6章 集群与高可用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../ha/prometheus-local-storage.html">
+            
+                <a href="../ha/prometheus-local-storage.html">
+            
+                    
+                    本地存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="../ha/prometheus-remote-storage.html">
+            
+                <a href="../ha/prometheus-remote-storage.html">
+            
+                    
+                    远程存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" data-path="../ha/scale-prometheus-with-federation.html">
+            
+                <a href="../ha/scale-prometheus-with-federation.html">
+            
+                    
+                    联邦集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4" data-path="../ha/prometheus-and-high-availability.html">
+            
+                <a href="../ha/prometheus-and-high-availability.html">
+            
+                    
+                    Prometheus高可用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.5" data-path="../ha/alertmanager-high-availability.html">
+            
+                <a href="../ha/alertmanager-high-availability.html">
+            
+                    
+                    Alertmanager高可用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.6" data-path="../ha/SUMMARY.html">
+            
+                <a href="../ha/SUMMARY.html">
+            
+                    
+                    小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../sd/">
+            
+                <a href="../sd/">
+            
+                    
+                    第7章 Prometheus服务发现
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.1" data-path="../sd/why-need-service-discovery.html">
+            
+                <a href="../sd/why-need-service-discovery.html">
+            
+                    
+                    Prometheus与服务发现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.2" data-path="../sd/service-discovery-with-file.html">
+            
+                <a href="../sd/service-discovery-with-file.html">
+            
+                    
+                    基于文件的服务发现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.3" data-path="../sd/service-discovery-with-consul.html">
+            
+                <a href="../sd/service-discovery-with-consul.html">
+            
+                    
+                    基于Consul的服务发现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.4" data-path="../sd/service-discovery-with-relabel.html">
+            
+                <a href="../sd/service-discovery-with-relabel.html">
+            
+                    
+                    服务发现与Relabel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5" data-path="../sd/SUMMARY.html">
+            
+                <a href="../sd/SUMMARY.html">
+            
+                    
+                    小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part III - Prometheus实战</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../kubernetes/READMD.html">
+            
+                <a href="../kubernetes/READMD.html">
+            
+                    
+                    第8章 监控Kubernetes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../kubernetes/kubernetes-with-minikube.html">
+            
+                <a href="../kubernetes/kubernetes-with-minikube.html">
+            
+                    
+                    初识Kubernetes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../kubernetes/deploy-prometheus-in-kubernetes.html">
+            
+                <a href="../kubernetes/deploy-prometheus-in-kubernetes.html">
+            
+                    
+                    部署Prometheus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../kubernetes/service-discovery-with-kubernetes.html">
+            
+                <a href="../kubernetes/service-discovery-with-kubernetes.html">
+            
+                    
+                    Kubernetes下的服务发现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../kubernetes/use-prometheus-monitor-kubernetes.html">
+            
+                <a href="../kubernetes/use-prometheus-monitor-kubernetes.html">
+            
+                    
+                    监控Kubernetes集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="../kubernetes/hap-with-prometheus.html">
+            
+                <a href="../kubernetes/hap-with-prometheus.html">
+            
+                    
+                    基于Prometheus的弹性伸缩
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.6" data-path="../kubernetes/SUMMARY.html">
+            
+                <a href="../kubernetes/SUMMARY.html">
+            
+                    
+                    小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../operator/">
+            
+                <a href="../operator/">
+            
+                    
+                    第9章 Prometheus Operator
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.1" data-path="../operator/what-is-prometheus-operator.html">
+            
+                <a href="../operator/what-is-prometheus-operator.html">
+            
+                    
+                    什么是Prometheus Operator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2" data-path="../operator/use-operator-manage-prometheus.html">
+            
+                <a href="../operator/use-operator-manage-prometheus.html">
+            
+                    
+                    使用Operator管理Prometheus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.3" data-path="../operator/use-operator-manage-monitor.html">
+            
+                <a href="../operator/use-operator-manage-monitor.html">
+            
+                    
+                    使用Operator管理监控配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4" data-path="../operator/use-custom-configuration-in-operator.html">
+            
+                <a href="../operator/use-custom-configuration-in-operator.html">
+            
+                    
+                    在Prometheus Operator中使用自定义配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.5" data-path="../operator/SUMMARY.html">
+            
+                <a href="../operator/SUMMARY.html">
+            
+                    
+                    小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../REFERENCES.html">
+            
+                <a href="../REFERENCES.html">
+            
+                    
+                    参考资料
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >使用Client Java构建Exporter程序</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x4F7F;&#x7528;client-java&#x6784;&#x5EFA;exporter&#x7A0B;&#x5E8F;">&#x4F7F;&#x7528;Client Java&#x6784;&#x5EFA;Exporter&#x7A0B;&#x5E8F;</h1>
+<p>client_java&#x662F;Prometheus&#x9488;&#x5BF9;JVM&#x7C7B;&#x5F00;&#x53D1;&#x8BED;&#x8A00;&#x7684;client library&#x5E93;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x57FA;&#x4E8E;client_java&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5FEB;&#x901F;&#x5B9E;&#x73B0;&#x72EC;&#x7ACB;&#x8FD0;&#x884C;&#x7684;Exporter&#x7A0B;&#x5E8F;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x6211;&#x4EEC;&#x7684;&#x9879;&#x76EE;&#x6E90;&#x7801;&#x4E2D;&#x96C6;&#x6210;client_java&#x4EE5;&#x652F;&#x6301;Prometheus&#x3002;</p>
+<h2 id="&#x81EA;&#x5B9A;&#x4E49;collector">&#x81EA;&#x5B9A;&#x4E49;Collector</h2>
+<p>&#x5728;client_java&#x7684;simpleclient&#x6A21;&#x5757;&#x4E2D;&#x63D0;&#x4F9B;&#x4E86;&#x81EA;&#x5B9A;&#x4E49;&#x76D1;&#x63A7;&#x6307;&#x6807;&#x7684;&#x6838;&#x5FC3;&#x63A5;&#x53E3;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F7F;&#x7528;Gradle&#x4F5C;&#x4E3A;&#x9879;&#x76EE;&#x6784;&#x5EFA;&#x5DE5;&#x5177;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5411;build.gradle&#x6DFB;&#x52A0;simpleclient&#x4F9D;&#x8D56;&#xFF1A;</p>
+<pre><code>compile &apos;io.prometheus:simpleclient:0.3.0&apos;
+</code></pre><p>&#x5F53;&#x65E0;&#x6CD5;&#x76F4;&#x63A5;&#x4FEE;&#x6539;&#x76D1;&#x63A7;&#x76EE;&#x6807;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x81EA;&#x5B9A;&#x4E49;Collector&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5B9E;&#x73B0;&#x5BF9;&#x76D1;&#x63A7;&#x6837;&#x672C;&#x6536;&#x96C6;&#xFF0C;&#x8BE5;&#x6536;&#x96C6;&#x5668;&#x9700;&#x8981;&#x5B9E;&#x73B0;collect()&#x65B9;&#x6CD5;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x7EC4;&#x76D1;&#x63A7;&#x6837;&#x672C;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-Java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">YourCustomCollector</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Collector</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;MetricFamilySamples&gt; <span class="hljs-title">collect</span><span class="hljs-params">()</span> </span>{
+        List&lt;MetricFamilySamples&gt; mfs = <span class="hljs-keyword">new</span> ArrayList&lt;MetricFamilySamples&gt;();
+
+        String metricName = <span class="hljs-string">&quot;my_guage_1&quot;</span>;
+
+        <span class="hljs-comment">// Your code to get metrics</span>
+
+        MetricFamilySamples.Sample sample = <span class="hljs-keyword">new</span> MetricFamilySamples.Sample(metricName, Arrays.asList(<span class="hljs-string">&quot;l1&quot;</span>), Arrays.asList(<span class="hljs-string">&quot;v1&quot;</span>), <span class="hljs-number">4</span>);
+        MetricFamilySamples.Sample sample2 = <span class="hljs-keyword">new</span> MetricFamilySamples.Sample(metricName, Arrays.asList(<span class="hljs-string">&quot;l1&quot;</span>, <span class="hljs-string">&quot;l2&quot;</span>), Arrays.asList(<span class="hljs-string">&quot;v1&quot;</span>, <span class="hljs-string">&quot;v2&quot;</span>), <span class="hljs-number">3</span>);
+
+        MetricFamilySamples samples = <span class="hljs-keyword">new</span> MetricFamilySamples(metricName, Type.GAUGE, <span class="hljs-string">&quot;help&quot;</span>, Arrays.asList(sample, sample2));
+
+        mfs.add(samples);
+        <span class="hljs-keyword">return</span> mfs;
+    }
+}
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;my_guage&#x7684;&#x76D1;&#x63A7;&#x6307;&#x6807;&#xFF0C;&#x8BE5;&#x76D1;&#x63A7;&#x6307;&#x6807;&#x7684;&#x6240;&#x6709;&#x6837;&#x672C;&#x6570;&#x636E;&#x5747;&#x8F6C;&#x6362;&#x4E3A;&#x4E00;&#x4E2A;MetricFamilySamples.Sample&#x5B9E;&#x4F8B;&#xFF0C;&#x8BE5;&#x5B9E;&#x4F8B;&#x4E2D;&#x5305;&#x542B;&#x4E86;&#x8BE5;&#x6837;&#x672C;&#x7684;&#x6307;&#x6807;&#x540D;&#x79F0;&#x3001;&#x6807;&#x7B7E;&#x540D;&#x6570;&#x7EC4;&#x3001;&#x6807;&#x7B7E;&#x503C;&#x6570;&#x7EC4;&#x4EE5;&#x53CA;&#x6837;&#x672C;&#x6570;&#x636E;&#x7684;&#x503C;&#x3002;</p>
+<p>&#x76D1;&#x63A7;&#x6307;&#x6807;my_guage&#x7684;&#x6240;&#x6709;&#x6837;&#x672C;&#x503C;&#xFF0C;&#x9700;&#x8981;&#x6301;&#x4E45;&#x5316;&#x5230;&#x4E00;&#x4E2A;MetricFamilySamples&#x5B9E;&#x4F8B;&#x4E2D;&#xFF0C;MetricFamilySamples&#x6307;&#x5B9A;&#x4E86;&#x5F53;&#x524D;&#x76D1;&#x63A7;&#x6307;&#x6807;&#x7684;&#x540D;&#x79F0;&#x3001;&#x7C7B;&#x578B;&#x3001;&#x6CE8;&#x91CA;&#x4FE1;&#x606F;&#x7B49;&#x3002;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;MetricFamilySamples&#x4E2D;&#x6240;&#x6709;&#x6837;&#x672C;&#x7684;&#x540D;&#x79F0;&#x5FC5;&#x987B;&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#xFF0C;&#x5426;&#x5219;&#x751F;&#x6210;&#x7684;&#x6570;&#x636E;&#x5C06;&#x65E0;&#x6CD5;&#x7B26;&#x5408;Prometheus&#x7684;&#x89C4;&#x8303;&#x3002;</p>
+<p>&#x76F4;&#x63A5;&#x4F7F;&#x7528;MetricFamilySamples.Sample&#x548C;MetricFamilySamples&#x7684;&#x65B9;&#x5F0F;&#x9002;&#x7528;&#x4E8E;&#x5F53;&#x67D0;&#x76D1;&#x63A7;&#x6307;&#x6807;&#x7684;&#x6837;&#x672C;&#x4E4B;&#x95F4;&#x7684;&#x6807;&#x7B7E;&#x53EF;&#x80FD;&#x4E0D;&#x4E00;&#x81F4;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x4F8B;&#x5982;&#xFF0C;&#x5F53;&#x76D1;&#x63A7;&#x5BB9;&#x5668;&#x65F6;&#xFF0C;&#x4E0D;&#x540C;&#x5BB9;&#x5668;&#x5B9E;&#x4F8B;&#x53EF;&#x80FD;&#x5305;&#x542B;&#x4E00;&#x4E9B;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x6807;&#x7B7E;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x5C06;&#x8FD9;&#x4E9B;&#x6807;&#x7B7E;&#x53CD;&#x5E94;&#x5230;&#x6837;&#x672C;&#x4E0A;&#xFF0C;&#x90A3;&#x4E48;&#x6BCF;&#x4E2A;&#x6837;&#x672C;&#x7684;&#x6807;&#x7B7E;&#x5219;&#x4E0D;&#x53EF;&#x80FD;&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#x3002;&#x800C;&#x5982;&#x679C;&#x6240;&#x6709;&#x6837;&#x672C;&#x7684;&#x662F;&#x4E00;&#x81F4;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;client_java&#x9488;&#x5BF9;&#x4E0D;&#x540C;&#x6307;&#x6807;&#x7C7B;&#x578B;&#x7684;&#x5B9E;&#x73B0;GaugeMetricFamily&#xFF0C;CounterMetricFamily&#xFF0C;SummaryMetricFamily&#x7B49;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-Java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">YourCustomCollector2</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Collector</span> </span>{
+  <span class="hljs-function">List&lt;MetricFamilySamples&gt; <span class="hljs-title">collect</span><span class="hljs-params">()</span> </span>{
+    List&lt;MetricFamilySamples&gt; mfs = <span class="hljs-keyword">new</span> ArrayList&lt;MetricFamilySamples&gt;();
+
+    <span class="hljs-comment">// With no labels.</span>
+    mfs.add(<span class="hljs-keyword">new</span> GaugeMetricFamily(<span class="hljs-string">&quot;my_gauge_2&quot;</span>, <span class="hljs-string">&quot;help&quot;</span>, <span class="hljs-number">42</span>));
+
+    <span class="hljs-comment">// With labels</span>
+    GaugeMetricFamily labeledGauge = <span class="hljs-keyword">new</span> GaugeMetricFamily(<span class="hljs-string">&quot;my_other_gauge&quot;</span>, <span class="hljs-string">&quot;help&quot;</span>, Arrays.asList(<span class="hljs-string">&quot;labelname&quot;</span>));
+    labeledGauge.addMetric(Arrays.asList(<span class="hljs-string">&quot;foo&quot;</span>), <span class="hljs-number">4</span>);
+    labeledGauge.addMetric(Arrays.asList(<span class="hljs-string">&quot;bar&quot;</span>), <span class="hljs-number">5</span>);
+    mfs.add(labeledGauge);
+
+    <span class="hljs-keyword">return</span> mfs;
+  }
+}
+</code></pre>
+<h2 id="&#x4F7F;&#x7528;http-server&#x66B4;&#x9732;&#x6837;&#x672C;&#x6570;&#x636E;">&#x4F7F;&#x7528;HTTP Server&#x66B4;&#x9732;&#x6837;&#x672C;&#x6570;&#x636E;</h2>
+<p>client_java&#x4E0B;&#x7684;simpleclient_httpserver&#x6A21;&#x5757;&#x5B9E;&#x73B0;&#x4E86;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;HTTP&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x5F53;&#x5411;&#x8BE5;&#x670D;&#x52A1;&#x5668;&#x53D1;&#x9001;&#x83B7;&#x53D6;&#x6837;&#x672C;&#x6570;&#x636E;&#x7684;&#x8BF7;&#x6C42;&#x540E;&#xFF0C;&#x5B83;&#x4F1A;&#x81EA;&#x52A8;&#x8C03;&#x7528;&#x6240;&#x6709;Collector&#x7684;collect()&#x65B9;&#x6CD5;&#xFF0C;&#x5E76;&#x5C06;&#x6240;&#x6709;&#x6837;&#x672C;&#x6570;&#x636E;&#x8F6C;&#x6362;&#x4E3A;Prometheus&#x8981;&#x6C42;&#x7684;&#x6570;&#x636E;&#x8F93;&#x51FA;&#x683C;&#x5F0F;&#x89C4;&#x8303;&#x3002;&#x5982;&#x679C;&#x7528;&#x6237;&#x4F7F;&#x7528;&#x4E86;Gradle&#x6784;&#x5EFA;&#x9879;&#x76EE;&#xFF0C;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x4EE5;&#x4E0B;&#x4F9D;&#x8D56;&#xFF1A;</p>
+<pre><code>compile &apos;io.prometheus:simpleclient_httpserver:0.3.0&apos;
+</code></pre><p>&#x6DFB;&#x52A0;&#x4F9D;&#x8D56;&#x4E4B;&#x540E;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5728;Exporter&#x7A0B;&#x5E8F;&#x7684;main&#x65B9;&#x6CD5;&#x4E2D;&#x542F;&#x52A8;&#x4E00;&#x4E2A;HTTPServer&#x5B9E;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-Java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CustomExporter</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> IOException </span>{
+        HTTPServer server = <span class="hljs-keyword">new</span> HTTPServer(<span class="hljs-number">1234</span>);
+    }
+}
+</code></pre>
+<p>&#x800C;&#x5728;&#x542F;&#x52A8;&#x4E4B;&#x524D;&#xFF0C;&#x522B;&#x5FD8;&#x8BB0;&#x8C03;&#x7528;Collector&#x7684;register()&#x65B9;&#x6CD5;&#x3002;&#x5426;&#x5219;HTTPServer&#x662F;&#x627E;&#x4E0D;&#x5230;&#x4EFB;&#x4F55;&#x7684;Collector&#x5B9E;&#x4F8B;&#x7684;&#xFF1A;</p>
+<pre><code class="lang-Java"><span class="hljs-keyword">new</span> YourCustomCollector().register();
+<span class="hljs-keyword">new</span> YourCustomCollector2().register();
+</code></pre>
+<p>&#x8FD0;&#x884C;CustomExporter&#x5E76;&#x8BBF;&#x95EE;<a href="http://127.0.0.1:1234/metrics" target="_blank">http://127.0.0.1:1234/metrics</a>&#xFF0C;&#x5373;&#x53EF;&#x83B7;&#x53D6;&#x5230;&#x4EE5;&#x4E0B;&#x6570;&#x636E;&#xFF1A;</p>
+<pre><code>$ curl http://127.0.0.1:1234/metrics
+# HELP my_gauge help
+# TYPE my_gauge gauge
+my_gauge 42.0
+# HELP my_other_gauge help
+# TYPE my_other_gauge gauge
+my_other_gauge{labelname=&quot;foo&quot;,} 4.0
+my_other_gauge{labelname=&quot;bar&quot;,} 5.0
+# HELP my_guage help
+# TYPE my_guage gauge
+my_guage{l1=&quot;v1&quot;,} 4.0
+my_guage{l1=&quot;v1&quot;,l2=&quot;v2&quot;,} 3.0
+</code></pre><p>&#x5F53;&#x7136;HTTPServer&#x4E2D;&#x5E76;&#x4E0D;&#x5B58;&#x5728;&#x4EC0;&#x4E48;&#x9ED1;&#x9B54;&#x6CD5;&#xFF0C;&#x5176;&#x5185;&#x90E8;&#x5B9E;&#x73B0;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<p><img src="static/prometheus_client_java_2.png" alt="HTTPServer&#x5904;&#x7406;&#x6D41;&#x7A0B;"></p>
+<p>&#x5F53;&#x8C03;&#x7528;Collector&#x5B9E;&#x4F8B;register()&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x4F1A;&#x5C06;&#x8BE5;&#x5B9E;&#x4F8B;&#x4FDD;&#x5B58;&#x5230;CollectorRegistry&#x5F53;&#x4E2D;&#xFF0C;CollectorRegistry&#x8D1F;&#x8D23;&#x7EF4;&#x62A4;&#x5F53;&#x524D;&#x7CFB;&#x7EDF;&#x4E2D;&#x6240;&#x6709;&#x7684;Collector&#x5B9E;&#x4F8B;&#x3002; HTTPServer&#x5728;&#x63A5;&#x6536;&#x5230;HTTP&#x8BF7;&#x6C42;&#x4E4B;&#x540E;&#xFF0C;&#x4F1A;&#x4ECE;CollectorRegistry&#x4E2D;&#x62FF;&#x5230;&#x6240;&#x6709;&#x7684;Collector&#x5B9E;&#x4F8B;&#xFF0C;&#x5E76;&#x8C03;&#x7528;&#x5176;collect()&#x65B9;&#x6CD5;&#x83B7;&#x53D6;&#x6240;&#x6709;&#x6837;&#x672C;&#xFF0C;&#x6700;&#x540E;&#x683C;&#x5F0F;&#x5316;&#x4E3A;Prometheus&#x7684;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x3002;</p>
+<p>&#x9664;&#x4E86;&#x76F4;&#x63A5;&#x4F7F;&#x7528;HTTPServer&#x4EE5;&#x5916;&#x66B4;&#x9732;&#x6837;&#x672C;&#x6570;&#x636E;&#x4EE5;&#x5916;&#xFF0C;client_java&#x4E2D;&#x8FD8;&#x63D0;&#x4F9B;&#x4E86;&#x5BF9;Spring Boot&#x3001;Spring Web&#x4EE5;&#x53CA;Servlet&#x7684;&#x652F;&#x6301;&#x3002;</p>
+<h2 id="&#x4F7F;&#x7528;&#x5185;&#x7F6E;&#x7684;collector">&#x4F7F;&#x7528;&#x5185;&#x7F6E;&#x7684;Collector</h2>
+<p>&#x901A;&#x8FC7;client_java&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x6807;&#x51C6;&#x63A5;&#x53E3;&#xFF0C;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5FEB;&#x901F;&#x5B9E;&#x73B0;&#x81EA;&#x5DF1;&#x7684;&#x76D1;&#x63A7;&#x6570;&#x636E;&#x6536;&#x96C6;&#x5668;&#xFF0C;&#x5E76;&#x901A;&#x8FC7;HTTPServer&#x5C06;&#x6837;&#x672C;&#x6570;&#x636E;&#x8F93;&#x51FA;&#x7ED9;Prometheus&#x3002;&#x9664;&#x4E86;&#x63D0;&#x4F9B;&#x63A5;&#x53E3;&#x89C4;&#x8303;&#x4EE5;&#x5916;&#xFF0C;client_java&#x8FD8;&#x63D0;&#x4F9B;&#x4E86;&#x591A;&#x4E2A;&#x5185;&#x7F6E;&#x7684;Collector&#x6A21;&#x5757;&#xFF0C;&#x4EE5;simpleclient_hotspot&#x4E3A;&#x4F8B;&#xFF0C;&#x8BE5;&#x6A21;&#x5757;&#x4E2D;&#x5185;&#x7F6E;&#x4E86;&#x5BF9;JVM&#x865A;&#x62DF;&#x673A;&#x8FD0;&#x884C;&#x72B6;&#x6001;&#xFF08;GC&#xFF0C;&#x5185;&#x5B58;&#x6C60;&#xFF0C;JMX&#xFF0C;&#x7C7B;&#x52A0;&#x8F7D;&#xFF0C;&#x7EBF;&#x7A0B;&#x6C60;&#x7B49;&#xFF09;&#x6570;&#x636E;&#x7684;Collector&#x5B9E;&#x73B0;&#xFF0C;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5728;Gradle&#x4E2D;&#x6DFB;&#x52A0;&#x4EE5;&#x4E0B;&#x4F9D;&#x8D56;&#xFF0C;&#x5BFC;&#x5165;simpleclient_hotspot&#xFF1A;</p>
+<pre><code class="lang-Groovy">compile <span class="hljs-string">&apos;io.prometheus:simpleclient_hotspot:0.3.0&apos;</span>
+</code></pre>
+<p>&#x901A;&#x8FC7;&#x8C03;&#x7528;io.prometheus.client.hotspot.DefaultExport&#x7684;initialize&#x65B9;&#x6CD5;&#x6CE8;&#x518C;&#x8BE5;&#x6A21;&#x5757;&#x4E2D;&#x6240;&#x6709;&#x7684;Collector&#x5B9E;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-Java">DefaultExports.initialize();
+</code></pre>
+<p>&#x91CD;&#x65B0;&#x8FD0;&#x884C;CustomExporter&#xFF0C;&#x5E76;&#x83B7;&#x53D6;&#x6837;&#x672C;&#x6570;&#x636E;&#xFF1A;</p>
+<pre><code>$ curl http://127.0.0.1:1234/metrics
+# HELP jvm_buffer_pool_used_bytes Used bytes of a given JVM buffer pool.
+# TYPE jvm_buffer_pool_used_bytes gauge
+jvm_buffer_pool_used_bytes{pool=&quot;direct&quot;,} 8192.0
+jvm_buffer_pool_used_bytes{pool=&quot;mapped&quot;,} 0.0
+</code></pre><p>&#x9664;&#x4E86;&#x4E4B;&#x524D;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x76D1;&#x63A7;&#x6307;&#x6807;&#x4EE5;&#x5916;&#xFF0C;&#x5728;&#x54CD;&#x5E94;&#x5185;&#x5BB9;&#x4E2D;&#x8FD8;&#x4F1A;&#x5F97;&#x5230;&#x5F53;&#x524D;JVM&#x7684;&#x8FD0;&#x884C;&#x72B6;&#x6001;&#x6570;&#x636E;&#x3002;&#x5728;client_java&#x9879;&#x76EE;&#x4E2D;&#x9664;&#x4E86;&#x4F7F;&#x7528;&#x5185;&#x7F6E;&#x4E86;&#x5BF9;JVM&#x76D1;&#x63A7;&#x7684;Collector&#x4EE5;&#x5916;&#xFF0C;&#x8FD8;&#x5B9E;&#x73B0;&#x4E86;&#x5BF9;Hibernate&#xFF0C;Guava Cache&#xFF0C;Jetty&#xFF0C;Log4j&#x3001;Logback&#x7B49;&#x76D1;&#x63A7;&#x6570;&#x636E;&#x6536;&#x96C6;&#x7684;&#x652F;&#x6301;&#x3002;&#x7528;&#x6237;&#x53EA;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x76F8;&#x5E94;&#x7684;&#x4F9D;&#x8D56;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8FDB;&#x884C;&#x4F7F;&#x7528;&#x3002;</p>
+<h2 id="&#x5728;&#x4E1A;&#x52A1;&#x4EE3;&#x7801;&#x4E2D;&#x8FDB;&#x884C;&#x76D1;&#x63A7;&#x57CB;&#x70B9;">&#x5728;&#x4E1A;&#x52A1;&#x4EE3;&#x7801;&#x4E2D;&#x8FDB;&#x884C;&#x76D1;&#x63A7;&#x57CB;&#x70B9;</h2>
+<p>&#x5728;client_java&#x4E2D;&#x9664;&#x4E86;&#x4F7F;&#x7528;Collector&#x76F4;&#x63A5;&#x91C7;&#x96C6;&#x6837;&#x672C;&#x6570;&#x636E;&#x4EE5;&#x5916;&#xFF0C;&#x8FD8;&#x76F4;&#x63A5;&#x63D0;&#x4F9B;&#x4E86;&#x5BF9;Prometheus&#x4E2D;4&#x79CD;&#x76D1;&#x63A7;&#x7C7B;&#x578B;&#x7684;&#x5B9E;&#x73B0;&#x5206;&#x522B;&#x662F;&#xFF1A;Counter&#x3001;Gauge&#x3001;Summary&#x548C;Histogram&#x3002; &#x57FA;&#x4E8E;&#x8FD9;&#x4E9B;&#x5B9E;&#x73B0;&#xFF0C;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x53EF;&#x4EE5;&#x975E;&#x5E38;&#x65B9;&#x4FBF;&#x7684;&#x5728;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x4E1A;&#x52A1;&#x6D41;&#x7A0B;&#x4E2D;&#x8FDB;&#x884C;&#x76D1;&#x63A7;&#x57CB;&#x70B9;&#x3002;</p>
+<h2 id="&#x7B80;&#x5355;&#x7C7B;&#x578B;gauge&#x548C;counter">&#x7B80;&#x5355;&#x7C7B;&#x578B;Gauge&#x548C;Counter</h2>
+<p>&#x4EE5;Gauge&#x4E3A;&#x4F8B;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x76D1;&#x63A7;&#x67D0;&#x4E2A;&#x4E1A;&#x52A1;&#x5F53;&#x524D;&#x6B63;&#x5728;&#x5904;&#x7406;&#x7684;&#x8BF7;&#x6C42;&#x6570;&#x91CF;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre><code class="lang-Java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">YourClass</span> </span>{
+
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Gauge inprogressRequests = Gauge.build()
+            .name(<span class="hljs-string">&quot;inprogress_requests&quot;</span>).help(<span class="hljs-string">&quot;Inprogress requests.&quot;</span>).register();
+
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">processRequest</span><span class="hljs-params">()</span> </span>{
+        inprogressRequests.inc();
+        <span class="hljs-comment">// Your code here.</span>
+        inprogressRequests.dec();
+    }
+
+}
+</code></pre>
+<p>Gauge&#x7EE7;&#x627F;&#x81EA;Collector&#xFF0C;registoer()&#x65B9;&#x6CD5;&#x4F1A;&#x5C06;&#x8BE5;Gauge&#x5B9E;&#x4F8B;&#x6CE8;&#x518C;&#x5230;CollectorRegistry&#x4E2D;&#x3002;&#x8FD9;&#x91CC;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;inprogress_requests&#x7684;&#x76D1;&#x63A7;&#x6307;&#x6807;&#xFF0C;&#x5176;&#x6CE8;&#x91CA;&#x4FE1;&#x606F;&#x4E3A;&quot;Inprogress requests&quot;&#x3002;</p>
+<p>Gauge&#x5BF9;&#x8C61;&#x4E3B;&#x8981;&#x5305;&#x542B;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;inc()&#x548C;dec()&#xFF0C;&#x5206;&#x522B;&#x7528;&#x4E8E;&#x8BA1;&#x6570;&#x5668;+1&#x548C;-1&#x3002;</p>
+<p>&#x5982;&#x679C;&#x76D1;&#x63A7;&#x6307;&#x6807;&#x4E2D;&#x8FD8;&#x9700;&#x8981;&#x5B9A;&#x4E49;&#x6807;&#x7B7E;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;Gauge&#x6784;&#x9020;&#x5668;&#x7684;labelNames()&#x65B9;&#x6CD5;&#xFF0C;&#x58F0;&#x660E;&#x76D1;&#x63A7;&#x6307;&#x6807;&#x7684;&#x6807;&#x7B7E;&#xFF0C;&#x540C;&#x65F6;&#x5728;&#x6837;&#x672C;&#x8BA1;&#x6570;&#x65F6;&#xFF0C;&#x901A;&#x8FC7;&#x6307;&#x6807;&#x7684;labels()&#x65B9;&#x6CD5;&#x6307;&#x5B9A;&#x6807;&#x7B7E;&#x7684;&#x503C;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-Java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">YourClass</span> </span>{
+
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Gauge inprogressRequests = Gauge.build()
+            .name(<span class="hljs-string">&quot;inprogress_requests&quot;</span>)
+            .labelNames(<span class="hljs-string">&quot;method&quot;</span>)
+            .help(<span class="hljs-string">&quot;Inprogress requests.&quot;</span>).register();
+
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">processRequest</span><span class="hljs-params">()</span> </span>{
+        inprogressRequests.labels(<span class="hljs-string">&quot;get&quot;</span>).inc();
+        <span class="hljs-comment">// Your code here.</span>
+        inprogressRequests.labels(<span class="hljs-string">&quot;get&quot;</span>).dec();
+    }
+
+}
+</code></pre>
+<p>Counter&#x4E0E;Gauge&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x4E00;&#x81F4;&#xFF0C;&#x552F;&#x4E00;&#x7684;&#x533A;&#x522B;&#x5728;&#x4E8E;Counter&#x5B9E;&#x4F8B;&#x53EA;&#x5305;&#x542B;&#x4E00;&#x4E2A;inc()&#x65B9;&#x6CD5;&#xFF0C;&#x7528;&#x4E8E;&#x8BA1;&#x6570;&#x5668;+1&#x3002;</p>
+<h3 id="&#x590D;&#x6742;&#x7C7B;&#x578B;summary&#x548C;histogram">&#x590D;&#x6742;&#x7C7B;&#x578B;Summary&#x548C;Histogram</h3>
+<p>Summary&#x548C;Histogram&#x7528;&#x4E8E;&#x7EDF;&#x8BA1;&#x548C;&#x5206;&#x6790;&#x6837;&#x672C;&#x7684;&#x5206;&#x5E03;&#x60C5;&#x51B5;&#x3002;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF0C;&#x901A;&#x8FC7;Summary&#x53EF;&#x4EE5;&#x5C06;HTTP&#x8BF7;&#x6C42;&#x7684;&#x5B57;&#x8282;&#x6570;&#x4EE5;&#x53CA;&#x8BF7;&#x6C42;&#x5904;&#x7406;&#x65F6;&#x95F4;&#x4F5C;&#x4E3A;&#x7EDF;&#x8BA1;&#x6837;&#x672C;&#xFF0C;&#x76F4;&#x63A5;&#x7EDF;&#x8BA1;&#x5176;&#x6837;&#x672C;&#x7684;&#x5206;&#x5E03;&#x60C5;&#x51B5;&#x3002;</p>
+<pre><code class="lang-Java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">YourClass</span> </span>{
+  <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Summary receivedBytes = Summary.build()
+     .name(<span class="hljs-string">&quot;requests_size_bytes&quot;</span>).help(<span class="hljs-string">&quot;Request size in bytes.&quot;</span>).register();
+  <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Summary requestLatency = Summary.build()
+     .name(<span class="hljs-string">&quot;requests_latency_seconds&quot;</span>).help(<span class="hljs-string">&quot;Request latency in seconds.&quot;</span>).register();
+
+  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">processRequest</span><span class="hljs-params">(Request req)</span> </span>{
+    Summary.Timer requestTimer = requestLatency.startTimer();
+    <span class="hljs-keyword">try</span> {
+      <span class="hljs-comment">// Your code here.</span>
+    } <span class="hljs-keyword">finally</span> {
+      receivedBytes.observe(req.size());
+      requestTimer.observeDuration();
+    }
+  }
+}
+</code></pre>
+<p>&#x9664;&#x4E86;&#x4F7F;&#x7528;Timer&#x8FDB;&#x884C;&#x8BA1;&#x65F6;&#x4EE5;&#x5916;&#xFF0C;Summary&#x5B9E;&#x4F8B;&#x4E5F;&#x63D0;&#x4F9B;&#x4E86;timer()&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x5BF9;&#x7EBF;&#x7A0B;&#x6216;&#x8005;Lamda&#x8868;&#x8FBE;&#x5F0F;&#x8FD0;&#x884C;&#x65F6;&#x95F4;&#x8FDB;&#x884C;&#x7EDF;&#x8BA1;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">YourClass</span> </span>{
+  <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Summary requestLatency = Summary.build()
+    .name(<span class="hljs-string">&quot;requests_latency_seconds&quot;</span>).help(<span class="hljs-string">&quot;Request latency in seconds.&quot;</span>).register();
+
+  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">processRequest</span><span class="hljs-params">(Request req)</span> </span>{
+    requestLatency.timer(<span class="hljs-keyword">new</span> Runnable() {
+      <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// Your code here.    </span>
+      }
+    });  
+
+    <span class="hljs-comment">// Or the Java 8 lambda equivalent   </span>
+    requestLatency.timer(() -&gt; {
+      <span class="hljs-comment">// Your code here.</span>
+    });
+  }
+}
+</code></pre>
+<p>Summary&#x548C;Histogram&#x7684;&#x7528;&#x6CD5;&#x57FA;&#x672C;&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#xFF0C;&#x533A;&#x522B;&#x5728;&#x4E8E;Summary&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x7EDF;&#x8BA1;&#x7684;&#x5206;&#x4F4D;&#x6570;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Summary requestLatency = Summary.build()
+    .quantile(<span class="hljs-number">0.5</span>, <span class="hljs-number">0.05</span>)   <span class="hljs-comment">// &#x5176;&#x4E2D;0.05&#x4E3A;&#x8BEF;&#x5DEE;</span>
+    .quantile(<span class="hljs-number">0.9</span>, <span class="hljs-number">0.01</span>)   <span class="hljs-comment">// &#x5176;&#x4E2D;0.01&#x4E3A;&#x8BEF;&#x5DEE;</span>
+    .name(<span class="hljs-string">&quot;requests_latency_seconds&quot;</span>).help(<span class="hljs-string">&quot;Request latency in seconds.&quot;</span>).register();
+</code></pre>
+<p>&#x5BF9;&#x4E8E;Histogram&#x800C;&#x8A00;&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x5206;&#x5E03;&#x6876;&#x4E3A;[.005, .01, .025, .05, .075, .1, .25, .5, .75, 1, 2.5, 5, 7.5, 10]&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x6876;&#x5206;&#x5E03;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;buckets()&#x65B9;&#x6CD5;&#x6307;&#x5B9A;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-java"> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Histogram requestLatency = Histogram.build()
+            .name(<span class="hljs-string">&quot;requests_latency_seconds&quot;</span>).help(<span class="hljs-string">&quot;Request latency in seconds.&quot;</span>)
+            .buckets(<span class="hljs-number">0.1</span>, <span class="hljs-number">0.2</span>, <span class="hljs-number">0.4</span>, <span class="hljs-number">0.8</span>)
+            .register();
+</code></pre>
+<h2 id="&#x4E0E;pushgateway&#x96C6;&#x6210;">&#x4E0E;PushGateway&#x96C6;&#x6210;</h2>
+<p>&#x5BF9;&#x4E8E;&#x4E00;&#x4E9B;&#x77ED;&#x5468;&#x671F;&#x6216;&#x8005;&#x4E34;&#x65F6;&#x91C7;&#x96C6;&#x7684;&#x6837;&#x672C;&#x6570;&#x636E;&#xFF0C;client_java&#x8FD8;&#x63D0;&#x4F9B;&#x4E86;&#x5BF9;PushGateway&#x7684;&#x652F;&#x6301;&#xFF1A;</p>
+<p>&#x6DFB;&#x52A0;&#x4F9D;&#x8D56;&#xFF1A;</p>
+<pre><code class="lang-Groovy">compile <span class="hljs-string">&apos;io.prometheus:simpleclient_pushgateway:0.3.0&apos;</span>
+</code></pre>
+<p>&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF0C;PushGateway&#x7684;&#x5B9E;&#x73B0;&#x7C7B;&#x53EF;&#x4EE5;&#x4ECE;&#x6240;&#x6709;&#x6CE8;&#x518C;&#x5230;defaultRegistry&#x7684;Collector&#x5B9E;&#x4F8B;&#x4E2D;&#x83B7;&#x53D6;&#x6837;&#x672C;&#x6570;&#x636E;&#x5E76;&#x76F4;&#x63A5;&#x63A8;&#x9001;  &#x5230;&#x5916;&#x90E8;&#x90E8;&#x7F72;&#x7684;PushGateway&#x670D;&#x52A1;&#x4E2D;&#x3002;</p>
+<pre><code class="lang-Java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PushGatewayIntegration</span> </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">push</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException </span>{
+        CollectorRegistry registry = CollectorRegistry.defaultRegistry;
+        PushGateway pg = <span class="hljs-keyword">new</span> PushGateway(<span class="hljs-string">&quot;127.0.0.1:9091&quot;</span>);
+        pg.pushAdd(registry, <span class="hljs-string">&quot;my_batch_job&quot;</span>);
+    }
+
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="custom_exporter_with_java.html" class="navigation navigation-prev " aria-label="Previous page: 使用Java自定义Exporter">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="custom_app_support_prometheus.html" class="navigation navigation-next " aria-label="Next page: 在应用中内置Prometheus支持">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"使用Client Java构建Exporter程序","level":"3.1.3.1","depth":3,"next":{"title":"在应用中内置Prometheus支持","level":"3.1.3.2","depth":3,"path":"exporter/custom_app_support_prometheus.md","ref":"./exporter/custom_app_support_prometheus.md","articles":[]},"previous":{"title":"使用Java自定义Exporter","level":"3.1.3","depth":2,"path":"exporter/custom_exporter_with_java.md","ref":"./exporter/custom_exporter_with_java.md","articles":[{"title":"使用Client Java构建Exporter程序","level":"3.1.3.1","depth":3,"path":"exporter/client_library_java.md","ref":"./exporter/client_library_java.md","articles":[]},{"title":"在应用中内置Prometheus支持","level":"3.1.3.2","depth":3,"path":"exporter/custom_app_support_prometheus.md","ref":"./exporter/custom_app_support_prometheus.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"exporter/client_library_java.md","mtime":"2019-06-28T14:06:50.934Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-28T14:56:14.926Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
