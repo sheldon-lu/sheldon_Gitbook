@@ -1,3 +1,3 @@
 # 本章小结
 
-在这一章中，我们初步了解了Prometheus以及相比于其他相似方案的优缺点，介绍了Prometheus的生态以及核心能力，在本地使用Prometheus和NodeExporter搭建了一个主机监控的环境，并且对数据进行了聚合以及可视化。
+了解Prometheus以及相比于其他相似方案的优缺点，介绍了Prometheus的生态以及核心能力，在本地使用Prometheus和NodeExporter搭建了一个主机监控的环境，并且对数据进行了聚合以及可视化。
